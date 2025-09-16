@@ -1,0 +1,18 @@
+URLs das imagens placeholder (Unsplash):
+
+quem-somos.jpg: https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=600&fit=crop&crop=center
+plano-individual.jpg: https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=300&fit=crop&crop=center
+plano-familiar.jpg: https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400&h=300&fit=crop&crop=center
+plano-pme.jpg: https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop&crop=center
+plano-empresarial.jpg: https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop&crop=center
+plano-odontologico.jpg: https://images.unsplash.com/photo-1606811841689-23e56c2c90b9?w=400&h=300&fit=crop&crop=center
+plano-premium.jpg: https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=400&h=300&fit=crop&crop=center
+blog-1.jpg: https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop&crop=center
+blog-2.jpg: https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=300&fit=crop&crop=center
+blog-3.jpg: https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400&h=300&fit=crop&crop=center
+blog-4.jpg: https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop&crop=center
+blog-5.jpg: https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop&crop=center
+blog-6.jpg: https://images.unsplash.com/photo-1606811841689-23e56c2c90b9?w=400&h=300&fit=crop&crop=center
+logo-sobam.png: https://via.placeholder.com/64x32/cccccc/666666?text=SOBAM
+logo-amil.png: https://via.placeholder.com/64x32/cccccc/666666?text=AMIL
+logo-ans.png: https://via.placeholder.com/64x32/cccccc/666666?text=ANS
