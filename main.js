@@ -14,12 +14,12 @@ set_tema('blue-600', 'blue-100');
 document.addEventListener('DOMContentLoaded', function() {
     const menuMobileBtn = document.getElementById('menu-mobile-btn');
     const menuMobile = document.getElementById('menu-mobile');
-    const lgpdLink = document.getElementById('lgpd-link');
-    const lgpdModal = document.getElementById('lgpd-modal');
-    const closeLgpdModal = document.getElementById('close-lgpd-modal');
-    const formOrcamento = document.getElementById('form-orcamento');
-    const orcamentoSuccess = document.getElementById('orcamento-success');
-    const telefoneOrcamento = document.getElementById('telefone-orcamento');
+    const lgpdLink = document.getElementById('lgpd-link') || null;
+    const lgpdModal = document.getElementById('lgpd-modal') || null;
+    const closeLgpdModal = document.getElementById('close-lgpd-modal') || null;
+    const formOrcamento = document.getElementById('form-orcamento') || null;
+    const orcamentoSuccess = document.getElementById('orcamento-success') || null;
+    const telefoneOrcamento = document.getElementById('telefone-orcamento') || null;
     
     const filtrosPlano = document.querySelectorAll('.filtro-plano');
     const cardsPlano = document.querySelectorAll('.plano-card');
@@ -64,17 +64,17 @@ document.addEventListener('DOMContentLoaded', function() {
         const lgpd = formData.get('lgpd');
         
         if (!nome) {
-            alert('lorem ipsum');
+            alert('Erro de validação');
             return false;
         }
         
         if (!telefone) {
-            alert('lorem ipsum');
+            alert('Erro de validação');
             return false;
         }
         
         if (!lgpd) {
-            alert('lorem ipsum');
+            alert('Erro de validação');
             return false;
         }
         
@@ -88,22 +88,22 @@ document.addEventListener('DOMContentLoaded', function() {
         const modalidade = formData.get('modalidade');
         
         if (!nomeCompleto) {
-            alert('lorem ipsum');
+            alert('Erro de validação');
             return false;
         }
         
         if (!email) {
-            alert('lorem ipsum');
+            alert('Erro de validação');
             return false;
         }
         
         if (!telefone) {
-            alert('lorem ipsum');
+            alert('Erro de validação');
             return false;
         }
         
         if (!modalidade) {
-            alert('lorem ipsum');
+            alert('Erro de validação');
             return false;
         }
         
@@ -143,44 +143,56 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    telefoneOrcamento.addEventListener('blur', function() {
-        this.value = formatarTelefone(this.value);
-    });
+    if (telefoneOrcamento) {
+        telefoneOrcamento.addEventListener('blur', function() {
+            this.value = formatarTelefone(this.value);
+        });
+    }
     
-    telefoneOrcamento.addEventListener('input', function() {
-        this.value = this.value.replace(/\D/g, '');
-    });
+    if (telefoneOrcamento) {
+        telefoneOrcamento.addEventListener('input', function() {
+            this.value = this.value.replace(/\D/g, '');
+        });
+    }
     
-    formOrcamento.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const formData = new FormData(this);
-        
-        if (validarFormularioOrcamento(formData)) {
-            orcamentoSuccess.classList.remove('hidden');
-            this.reset();
+    if (formOrcamento) {
+        formOrcamento.addEventListener('submit', function(e) {
+            e.preventDefault();
             
-            setTimeout(() => {
-                orcamentoSuccess.classList.add('hidden');
-            }, 5000);
-        }
-    });
+            const formData = new FormData(this);
+            
+            if (validarFormularioOrcamento(formData)) {
+                if (orcamentoSuccess) orcamentoSuccess.classList.remove('hidden');
+                this.reset();
+                
+                setTimeout(() => {
+                    if (orcamentoSuccess) orcamentoSuccess.classList.add('hidden');
+                }, 5000);
+            }
+        });
+    }
     
     
-    lgpdLink.addEventListener('click', function(e) {
-        e.preventDefault();
-        lgpdModal.classList.remove('hidden');
-    });
+    if (lgpdLink && lgpdModal) {
+        lgpdLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            lgpdModal.classList.remove('hidden');
+        });
+    }
     
-    closeLgpdModal.addEventListener('click', function() {
-        lgpdModal.classList.add('hidden');
-    });
+    if (closeLgpdModal && lgpdModal) {
+        closeLgpdModal.addEventListener('click', function() {
+            lgpdModal.classList.add('hidden');
+        });
+    }
     
-    lgpdModal.addEventListener('click', function(e) {
-        if (e.target === this) {
-            this.classList.add('hidden');
-        }
-    });
+    if (lgpdModal) {
+        lgpdModal.addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.classList.add('hidden');
+            }
+        });
+    }
     
     filtrosPlano.forEach(filtro => {
         filtro.addEventListener('click', function() {
@@ -382,7 +394,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const entries = list.getEntries();
         entries.forEach(entry => {
             if (entry.entryType === 'navigation') {
-                console.log('lorem ipsum:', entry.loadEventEnd - entry.loadEventStart);
+                // Performance monitoring - logs removed for production
             }
         });
     });
@@ -390,7 +402,7 @@ document.addEventListener('DOMContentLoaded', function() {
     performanceObserver.observe({ entryTypes: ['navigation'] });
     
     const errorHandler = (event) => {
-        console.error('lorem ipsum:', event.error);
+        console.error('Error:', event.error);
     };
     
     window.addEventListener('error', errorHandler);
@@ -427,7 +439,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     const skipLink = document.createElement('a');
     skipLink.href = '#inicio';
-    skipLink.textContent = 'lorem ipsum';
+    skipLink.textContent = 'Pular para o conteúdo';
     skipLink.className = 'sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white px-4 py-2 rounded z-50';
     document.body.insertBefore(skipLink, document.body.firstChild);
     
@@ -460,7 +472,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    trapFocus(lgpdModal);
+    if (lgpdModal) {
+        trapFocus(lgpdModal);
+    }
     
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     
@@ -498,10 +512,10 @@ document.addEventListener('DOMContentLoaded', function() {
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('/sw.js')
                 .then(registration => {
-                    console.log('lorem ipsum');
+                    // Debug log removed
                 })
                 .catch(error => {
-                    console.log('lorem ipsum');
+                    // Debug log removed
                 });
         }
     };
@@ -546,7 +560,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (!menuMobile.classList.contains('hidden')) {
                     menuMobile.classList.add('hidden');
                 }
-                if (!lgpdModal.classList.contains('hidden')) {
+                if (lgpdModal && !lgpdModal.classList.contains('hidden')) {
                     lgpdModal.classList.add('hidden');
                 }
             }
@@ -613,10 +627,15 @@ document.addEventListener('DOMContentLoaded', function() {
     lazyLoadImages();
     
     const preloadCriticalResources = () => {
+        // Only preload on main pages, not on posts
+        if (window.location.pathname.includes('/posts/')) {
+            return;
+        }
+        
         const criticalImages = [
-            'assets/quem-somos.jpg',
-            'assets/plano-individual.jpg',
-            'assets/plano-familiar.jpg'
+            'assets/image-quem-somos.webp',
+            'assets/image-hero.webp',
+            'assets/image-individual.webp'
         ];
         
         criticalImages.forEach(src => {
@@ -647,7 +666,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const handleOffline = () => {
         const offlineMessage = document.createElement('div');
         offlineMessage.className = 'fixed top-4 left-4 right-4 bg-yellow-500 text-white p-4 rounded-lg z-50 text-center';
-        offlineMessage.textContent = 'lorem ipsum';
+        offlineMessage.textContent = 'Você está offline. Algumas funcionalidades podem não estar disponíveis.';
         document.body.appendChild(offlineMessage);
         
         setTimeout(() => {
@@ -658,7 +677,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const handleOnline = () => {
         const onlineMessage = document.createElement('div');
         onlineMessage.className = 'fixed top-4 left-4 right-4 bg-green-500 text-white p-4 rounded-lg z-50 text-center';
-        onlineMessage.textContent = 'lorem ipsum';
+        onlineMessage.textContent = 'Conexão restaurada!';
         document.body.appendChild(onlineMessage);
         
         setTimeout(() => {
@@ -673,7 +692,7 @@ document.addEventListener('DOMContentLoaded', function() {
         measurePageLoad: () => {
             window.addEventListener('load', () => {
                 const loadTime = performance.timing.loadEventEnd - performance.timing.navigationStart;
-                console.log('lorem ipsum:', loadTime + 'ms');
+                // Performance log removed
             });
         },
         
@@ -682,7 +701,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const entries = list.getEntries();
                 entries.forEach(entry => {
                     if (entry.name === 'first-contentful-paint') {
-                        console.log('lorem ipsum:', entry.startTime + 'ms');
+                        // Performance log removed
                     }
                 });
             });
@@ -699,7 +718,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const buttons = document.querySelectorAll('button:not([aria-label])');
             buttons.forEach(button => {
                 if (!button.textContent.trim()) {
-                    button.setAttribute('aria-label', 'lorem ipsum');
+                    button.setAttribute('aria-label', 'Botão de ação');
                 }
             });
         },
@@ -731,7 +750,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     {
                         "@type": "ListItem",
                         "position": 1,
-                        "name": "lorem ipsum",
+                        "name": "Tabelas Planos de Saúde",
                         "item": window.location.origin
                     }
                 ]
@@ -746,7 +765,7 @@ document.addEventListener('DOMContentLoaded', function() {
         optimizeMetaTags: () => {
             const metaDescription = document.querySelector('meta[name="description"]');
             if (metaDescription) {
-                metaDescription.content = 'lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua';
+                metaDescription.content = 'Compare e encontre o melhor plano de saúde para você e sua família. Consultoria gratuita e especializada.';
             }
         }
     };
@@ -791,7 +810,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     const errorReporting = {
         reportError: (error, context) => {
-            console.error('lorem ipsum:', error, context);
+            console.error('Error:', error, context);
             
             if (typeof gtag !== 'undefined') {
                 gtag('event', 'exception', {
@@ -838,17 +857,19 @@ document.addEventListener('DOMContentLoaded', function() {
     userExperience.addHoverEffects();
     
     const formOrcamentoFields = document.querySelectorAll('#form-orcamento input, #form-orcamento select');
-    formOrcamentoFields.forEach(field => {
-        field.addEventListener('blur', function() {
-            formValidation.validateField(this);
-        });
-        
-        field.addEventListener('input', function() {
-            if (this.classList.contains('border-red-500')) {
+    if (formOrcamentoFields.length > 0) {
+        formOrcamentoFields.forEach(field => {
+            field.addEventListener('blur', function() {
                 formValidation.validateField(this);
-            }
+            });
+        
+            field.addEventListener('input', function() {
+                if (this.classList.contains('border-red-500')) {
+                    formValidation.validateField(this);
+                }
+            });
         });
-    });
+    }
     
     const mobileOptimizations = {
         addTouchGestures: () => {
@@ -868,9 +889,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 if (Math.abs(diffY) > Math.abs(diffX) && Math.abs(diffY) > 50) {
                     if (diffY > 0) {
-                        console.log('lorem ipsum');
+                        // Debug log removed
                     } else {
-                        console.log('lorem ipsum');
+                        // Debug log removed
                     }
                 }
             });

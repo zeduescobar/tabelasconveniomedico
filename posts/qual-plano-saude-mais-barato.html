@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Qual o plano de saúde mais barato? Entenda os fatores que influenciam no preço | Tabelas de Planos de Saúde</title>
-    <meta name="description" content="Quando o assunto é contratar um plano de saúde, a primeira dúvida que surge na mente da maioria das pessoas é: qual é o mais barato? Entenda os fatores que influenciam no preço.">
-    <meta name="keywords" content="plano de saúde mais barato, fatores que influenciam preço, comparação de planos, custo benefício">
+    <meta name="description" content="Descubra qual o plano de saúde mais barato e os principais fatores que influenciam no preço. Guia completo para escolher o melhor custo-benefício.">
+    <meta name="keywords" content="plano de saúde mais barato, preço plano de saúde, fatores preço plano, custo benefício plano saúde, comparação planos saúde, plano saúde barato, cotação plano saúde">
     <meta name="author" content="Ródnei Ricardo Faraguti">
     <meta property="og:title" content="Qual o plano de saúde mais barato? Entenda os fatores que influenciam no preço">
-    <meta property="og:description" content="Quando o assunto é contratar um plano de saúde, a primeira dúvida que surge na mente da maioria das pessoas é: qual é o mais barato? Entenda os fatores que influenciam no preço.">
+    <meta property="og:description" content="Descubra qual o plano de saúde mais barato e os principais fatores que influenciam no preço. Guia completo para escolher o melhor custo-benefício.">
     <meta property="og:type" content="article">
     <meta property="article:author" content="Ródnei Ricardo Faraguti">
     <meta property="article:published_time" content="2025-07-09">
@@ -17,7 +17,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <script>
+        // Suppress Tailwind production warning
+        window.tailwind = window.tailwind || {};
+        window.tailwind.config = window.tailwind.config || {};
+        window.tailwind.config.silent = true;
+        
+        // Override console.warn to suppress Tailwind warning
+        const originalWarn = console.warn;
+        console.warn = function(...args) {
+            if (args[0] && args[0].includes('cdn.tailwindcss.com should not be used in production')) {
+                return;
+            }
+            originalWarn.apply(console, args);
+        };
+    </script>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <script>
         tailwind.config = {
             theme: {
@@ -52,23 +67,23 @@
     }
     </script>
 </head>
-<body class="font-inter bg-gray-50">
+<body class="font-inter" style="background-color: #F9FAFB;">
     <header class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm border-b border-gray-200">
         <div class="container mx-auto px-4 py-4">
             <div class="flex items-center justify-between">
                 <div class="flex items-center space-x-2">
                     <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
-                        <img src="../favicon.svg" alt="Logo" class="w-6 h-6">
+                        <img src="../favicon.svg" alt="Logo Tabelas Planos de Saúde" class="w-6 h-6">
                     </div>
                     <span class="text-xl font-bold text-gray-900">Tabelas Planos de Saúde</span>
                 </div>
                 
                 <nav class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="text-gray-700 hover:text-blue-600 transition-colors">Início</a>
-                    <a href="index.html#quem-somos" class="text-gray-700 hover:text-blue-600 transition-colors">Quem Somos</a>
-                    <a href="index.html#planos" class="text-gray-700 hover:text-blue-600 transition-colors">Planos</a>
-                    <a href="blog.html" class="text-blue-600 font-semibold">Blog</a>
-                    <a href="index.html#planos" class="bg-blue-600 text-white px-6 py-2 rounded-2xl hover:bg-blue-700 transition-colors">Conheça nossos planos</a>
+                    <a href="../index.html" class="text-gray-700 hover:text-blue-600 transition-colors">Início</a>
+                    <a href="../index.html#quem-somos" class="text-gray-700 hover:text-blue-600 transition-colors">Quem Somos</a>
+                    <a href="../index.html#planos" class="text-gray-700 hover:text-blue-600 transition-colors">Planos</a>
+                    <a href="../blog.html" class="text-blue-600 font-semibold">Blog</a>
+                    <a href="../index.html#planos" class="bg-blue-600 text-white px-6 py-2 rounded-2xl hover:bg-blue-700 transition-colors">Conheça nossos planos</a>
                 </nav>
                 
                 <button id="menu-mobile-btn" class="md:hidden p-2">
@@ -81,11 +96,11 @@
         
         <div id="menu-mobile" class="md:hidden bg-white border-t border-gray-200 hidden">
             <div class="container mx-auto px-4 py-4 space-y-4">
-                <a href="index.html" class="block text-gray-700 hover:text-blue-600 transition-colors">Início</a>
-                <a href="index.html#quem-somos" class="block text-gray-700 hover:text-blue-600 transition-colors">Quem Somos</a>
-                <a href="index.html#planos" class="block text-gray-700 hover:text-blue-600 transition-colors">Planos</a>
-                <a href="blog.html" class="block text-blue-600 font-semibold">Blog</a>
-                <a href="index.html#planos" class="block bg-blue-600 text-white px-6 py-2 rounded-2xl hover:bg-blue-700 transition-colors text-center">Conheça nossos planos</a>
+                <a href="../index.html" class="block text-gray-700 hover:text-blue-600 transition-colors">Início</a>
+                <a href="../index.html#quem-somos" class="block text-gray-700 hover:text-blue-600 transition-colors">Quem Somos</a>
+                <a href="../index.html#planos" class="block text-gray-700 hover:text-blue-600 transition-colors">Planos</a>
+                <a href="../blog.html" class="block text-blue-600 font-semibold">Blog</a>
+                <a href="../index.html#planos" class="block bg-blue-600 text-white px-6 py-2 rounded-2xl hover:bg-blue-700 transition-colors text-center">Conheça nossos planos</a>
             </div>
         </div>
     </header>
@@ -192,41 +207,47 @@
                         <h2 class="text-2xl font-bold text-gray-900 mb-6">CONFIRA TAMBÉM:</h2>
                         
                         <div class="space-y-4">
-                            <article class="bg-white rounded-2xl shadow-lg overflow-hidden">
-                                <div class="flex">
-                                    <div class="w-32 h-24 bg-black flex items-center justify-center flex-shrink-0">
-                                        <span class="text-white text-sm">lorem ipsum</span>
+                            <a href="o-que-e-um-plano-coparticipativo.html" class="block">
+                                <article class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                                    <div class="flex">
+                                        <div class="w-32 h-24 flex-shrink-0">
+                                            <img src="../images/oq-coparticip.jpg" alt="O que é um plano de saúde coparticipativo - Guia completo" class="w-full h-full object-cover">
+                                        </div>
+                                        <div class="p-4 flex-1">
+                                            <h3 class="text-lg font-bold text-gray-900 mb-2">O que é um plano de saúde coparticipativo?</h3>
+                                            <p class="text-sm text-gray-600">Entenda como funciona e se vale a pena</p>
+                                        </div>
                                     </div>
-                                    <div class="p-4 flex-1">
-                                        <h3 class="text-lg font-bold text-gray-900 mb-2">O que é um plano de saúde coparticipativo?</h3>
-                                        <p class="text-sm text-gray-600">lorem ipsum</p>
-                                    </div>
-                                </div>
-                            </article>
+                                </article>
+                            </a>
 
-                            <article class="bg-white rounded-2xl shadow-lg overflow-hidden">
-                                <div class="flex">
-                                    <div class="w-32 h-24 bg-black flex items-center justify-center flex-shrink-0">
-                                        <span class="text-white text-sm">lorem ipsum</span>
+                            <a href="planos-coparticipativos-vale-a-pena.html" class="block">
+                                <article class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                                    <div class="flex">
+                                        <div class="w-32 h-24 flex-shrink-0">
+                                            <img src="../images/coparticip.jpg" alt="Plano de saúde coparticipativo quando vale a pena - Análise completa" class="w-full h-full object-cover">
+                                        </div>
+                                        <div class="p-4 flex-1">
+                                            <h3 class="text-lg font-bold text-gray-900 mb-2">Plano de saúde coparticipativo: quando vale a pena?</h3>
+                                            <p class="text-sm text-gray-600">Descubra se é a melhor opção para você</p>
+                                        </div>
                                     </div>
-                                    <div class="p-4 flex-1">
-                                        <h3 class="text-lg font-bold text-gray-900 mb-2">Plano de saúde coparticipativo: quando vale a pena?</h3>
-                                        <p class="text-sm text-gray-600">lorem ipsum</p>
-                                    </div>
-                                </div>
-                            </article>
+                                </article>
+                            </a>
 
-                            <article class="bg-white rounded-2xl shadow-lg overflow-hidden">
-                                <div class="flex">
-                                    <div class="w-32 h-24 bg-black flex items-center justify-center flex-shrink-0">
-                                        <span class="text-white text-sm">lorem ipsum</span>
+                            <a href="o-que-cobre-plano-saude-v2.html" class="block">
+                                <article class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                                    <div class="flex">
+                                        <div class="w-32 h-24 flex-shrink-0">
+                                            <img src="../images/cobre-saude-direitos.png" alt="O que cobre um plano de saúde - Direitos e coberturas essenciais" class="w-full h-full object-cover">
+                                        </div>
+                                        <div class="p-4 flex-1">
+                                            <h3 class="text-lg font-bold text-gray-900 mb-2">O que cobre um plano de saúde? Guia prático</h3>
+                                            <p class="text-sm text-gray-600">Entenda seus direitos e coberturas</p>
+                                        </div>
                                     </div>
-                                    <div class="p-4 flex-1">
-                                        <h3 class="text-lg font-bold text-gray-900 mb-2">O que cobre um plano de saúde? Guia prático</h3>
-                                        <p class="text-sm text-gray-600">lorem ipsum</p>
-                                    </div>
-                                </div>
-                            </article>
+                                </article>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -237,98 +258,16 @@
                     <div class="bg-white rounded-2xl shadow-lg p-6 mb-8">
                         <h3 class="text-xl font-bold text-gray-900 mb-4">SIMULE SEU PLANO</h3>
                         <p class="text-gray-600 mb-6">Simule e compare as melhores opções sem sair do site</p>
-                        <button class="w-full bg-blue-600 text-white py-3 rounded-2xl font-semibold hover:bg-blue-700 transition-colors">
+                        <a href="../index.html#simulador" class="w-full bg-blue-600 text-white py-3 rounded-2xl font-semibold hover:bg-blue-700 transition-colors block text-center">
                             CLIQUE AQUI
-                        </button>
+                        </a>
                     </div>
 
-                    <!-- Posts Relacionados -->
-                    <div class="bg-white rounded-2xl shadow-lg p-6">
-                        <h3 class="text-xl font-bold text-gray-900 mb-4">lorem ipsum</h3>
-                        
-                        <div class="space-y-4">
-                            <article class="flex space-x-3">
-                                <div class="w-16 h-16 bg-black rounded-lg flex items-center justify-center flex-shrink-0">
-                                    <span class="text-white text-xs">lorem</span>
-                                </div>
-                                <div class="flex-1">
-                                    <h4 class="text-sm font-semibold text-gray-900 mb-1">lorem ipsum</h4>
-                                    <p class="text-xs text-gray-600">lorem ipsum</p>
-                                </div>
-                            </article>
-
-                            <article class="flex space-x-3">
-                                <div class="w-16 h-16 bg-black rounded-lg flex items-center justify-center flex-shrink-0">
-                                    <span class="text-white text-xs">lorem</span>
-                                </div>
-                                <div class="flex-1">
-                                    <h4 class="text-sm font-semibold text-gray-900 mb-1">lorem ipsum</h4>
-                                    <p class="text-xs text-gray-600">lorem ipsum</p>
-                                </div>
-                            </article>
-
-                            <article class="flex space-x-3">
-                                <div class="w-16 h-16 bg-black rounded-lg flex items-center justify-center flex-shrink-0">
-                                    <span class="text-white text-xs">lorem</span>
-                                </div>
-                                <div class="flex-1">
-                                    <h4 class="text-sm font-semibold text-gray-900 mb-1">lorem ipsum</h4>
-                                    <p class="text-xs text-gray-600">lorem ipsum</p>
-                                </div>
-                            </article>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
 
         <!-- Formulário de Orçamento -->
-        <section class="py-20 bg-gray-50">
-            <div class="container mx-auto px-4">
-                <div class="text-center mb-12">
-                    <h2 class="text-4xl font-bold text-gray-900 mb-4">lorem ipsum</h2>
-                    <p class="text-lg text-gray-600">lorem ipsum dolor sit amet consectetur adipiscing elit</p>
-                </div>
-                
-                <div class="max-w-2xl mx-auto">
-                    <form id="form-orçamento" class="bg-white rounded-2xl p-8 shadow-lg">
-                        <div class="grid md:grid-cols-2 gap-6 mb-6">
-                            <div>
-                                <label for="nome-completo" class="block text-sm font-medium text-gray-700 mb-2">lorem ipsum *</label>
-                                <input type="text" id="nome-completo" name="nome-completo" required class="w-full px-4 py-3 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                            </div>
-                            <div>
-                                <label for="email-orçamento" class="block text-sm font-medium text-gray-700 mb-2">lorem ipsum *</label>
-                                <input type="email" id="email-orçamento" name="email-orçamento" required class="w-full px-4 py-3 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                            </div>
-                            <div>
-                                <label for="telefone-orçamento" class="block text-sm font-medium text-gray-700 mb-2">lorem ipsum *</label>
-                                <input type="tel" id="telefone-orçamento" name="telefone-orçamento" required class="w-full px-4 py-3 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                            </div>
-                            <div>
-                                <label for="modalidade" class="block text-sm font-medium text-gray-700 mb-2">lorem ipsum *</label>
-                                <select id="modalidade" name="modalidade" required class="w-full px-4 py-3 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                                    <option value="">lorem ipsum</option>
-                                    <option value="individual">lorem ipsum</option>
-                                    <option value="familiar">lorem ipsum</option>
-                                    <option value="empresarial">lorem ipsum</option>
-                                    <option value="adesão">lorem ipsum</option>
-                                </select>
-                            </div>
-                        </div>
-                        <button type="submit" class="w-full bg-blue-600 text-white py-4 rounded-2xl font-semibold hover:bg-blue-700 transition-colors flex items-center justify-center space-x-2">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
-                            </svg>
-                            <span>lorem ipsum</span>
-                        </button>
-                    </form>
-                    <div id="orçamento-success" class="hidden mt-4 p-4 bg-green-100 text-green-800 rounded-2xl text-center">
-                        lorem ipsum
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
 
     <!-- Footer -->
@@ -337,10 +276,10 @@
             <div class="grid md:grid-cols-3 gap-8 mb-8">
                 <div>
                     <div class="flex flex-wrap gap-4 mb-4">
-                        <img src="assets/Logo-VaiCo_horizontal_BRANCO_-1.png" alt="VaiCom" class="h-10 w-auto">
+                        <img src="../assets/Logo-VaiCo_horizontal_BRANCO_-1.png" alt="Logo VaiCom Saúde - Corretora de Planos de Saúde" class="h-10 w-auto">
                     </div>
                     <div class="flex items-center space-x-2">
-                        <img src="assets/ans-branca.png" alt="ANS" class="h-8 w-auto">
+                        <img src="../assets/ans-branca.png" alt="Logo ANS - Agência Nacional de Saúde Suplementar" class="h-8 w-auto">
                         <span class="text-sm text-gray-300">Regulamentado pela ANS</span>
                     </div>
                 </div>
@@ -348,10 +287,10 @@
                 <div>
                     <h3 class="text-lg font-semibold mb-4">Links Rápidos</h3>
                     <ul class="space-y-2">
-                        <li><a href="index.html" class="text-gray-300 hover:text-white transition-colors">Início</a></li>
-                        <li><a href="index.html#quem-somos" class="text-gray-300 hover:text-white transition-colors">Quem Somos</a></li>
-                        <li><a href="index.html#planos" class="text-gray-300 hover:text-white transition-colors">Planos</a></li>
-                        <li><a href="blog.html" class="text-gray-300 hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="../index.html" class="text-gray-300 hover:text-white transition-colors">Início</a></li>
+                        <li><a href="../index.html#quem-somos" class="text-gray-300 hover:text-white transition-colors">Quem Somos</a></li>
+                        <li><a href="../index.html#planos" class="text-gray-300 hover:text-white transition-colors">Planos</a></li>
+                        <li><a href="../blog.html" class="text-gray-300 hover:text-white transition-colors">Blog</a></li>
                     </ul>
                 </div>
                 
@@ -393,6 +332,6 @@
         </svg>
     </a>
 
-    <script src="main.js"></script>
+    <script src="../main.js"></script>
 </body>
 </html>

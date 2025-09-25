@@ -3,12 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog | Tabelas Planos de Saúde</title>
-    <meta name="description" content="Acesse nosso blog com artigos sobre planos de saúde, dicas e informações para ajudar na sua escolha do melhor plano.">
+    <title>Blog Planos de Saúde | Artigos, Dicas e Guias Completos | Tabelas Planos de Saúde</title>
+    <meta name="description" content="Acesse nosso blog com artigos especializados sobre planos de saúde, dicas práticas, guias completos e informações atualizadas para ajudar na sua escolha do melhor plano de saúde.">
+    <meta name="keywords" content="blog plano de saúde, artigos plano de saúde, dicas plano de saúde, guia plano de saúde, informações plano de saúde, carência plano de saúde, coparticipativo, cobertura plano de saúde, ANS, direitos beneficiário">
+    <meta name="author" content="Ródnei Ricardo Faraguti">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="pt-BR">
+    <meta name="geo.region" content="BR">
+    <meta name="geo.placename" content="Brasil">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://zeduescobar.github.io/tabelaplanosdesaude/blog.html">
+    <meta property="og:title" content="Blog Planos de Saúde | Artigos, Dicas e Guias Completos">
+    <meta property="og:description" content="Acesse nosso blog com artigos especializados sobre planos de saúde, dicas práticas, guias completos e informações atualizadas para ajudar na sua escolha do melhor plano de saúde.">
+    <meta property="og:image" content="https://zeduescobar.github.io/tabelaplanosdesaude/assets/image-hero.webp">
+    <meta property="og:site_name" content="Tabelas Planos de Saúde">
+    <meta property="og:locale" content="pt_BR">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://zeduescobar.github.io/tabelaplanosdesaude/blog.html">
+    <meta property="twitter:title" content="Blog Planos de Saúde | Artigos, Dicas e Guias Completos">
+    <meta property="twitter:description" content="Acesse nosso blog com artigos especializados sobre planos de saúde, dicas práticas, guias completos e informações atualizadas para ajudar na sua escolha do melhor plano de saúde.">
+    <meta property="twitter:image" content="https://zeduescobar.github.io/tabelaplanosdesaude/assets/image-hero.webp">
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="https://zeduescobar.github.io/tabelaplanosdesaude/blog.html">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Suppress Tailwind production warning
+        window.tailwind = window.tailwind || {};
+        window.tailwind.config = window.tailwind.config || {};
+        window.tailwind.config.silent = true;
+        
+        // Override console.warn to suppress Tailwind warning
+        const originalWarn = console.warn;
+        console.warn = function(...args) {
+            if (args[0] && args[0].includes('cdn.tailwindcss.com should not be used in production')) {
+                return;
+            }
+            originalWarn.apply(console, args);
+        };
+    </script>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <script>
         tailwind.config = {
@@ -188,53 +228,493 @@
             </div>
         </section>
 
-        <section class="py-20 bg-gray-50">
+    </main>
+
+            <!-- Simulador de Planos -->
+        <section class="py-20" style="background-color: #F9FAFB;">
             <div class="container mx-auto px-4">
-                <div class="text-center mb-12">
-                    <h2 class="text-4xl font-bold text-gray-900 mb-4">Solicite seu orçamento gratuito</h2>
-                    <p class="text-lg text-gray-600">Preencha os dados abaixo e nossa equipe entrará em contato</p>
-                </div>
-                
-                <div class="max-w-2xl mx-auto">
-                    <form id="form-orçamento" class="bg-white rounded-2xl p-8 shadow-lg">
-                        <div class="grid md:grid-cols-2 gap-6 mb-6">
+                <div class="max-w-4xl mx-auto">
+                    <!-- Passo 1 -->
+                    <div id="passo-1" class="bg-white rounded-2xl p-8 text-gray-900">
+                        <div class="text-center mb-8">
+                            <span class="text-sm font-medium mb-2 block text-gray-600">Passo 1 de 5</span>
+                            <h2 class="text-3xl font-bold mb-4 text-gray-900">SIMULADOR DE PLANOS</h2>
+                            <p class="text-lg mb-6 text-gray-600">100% ONLINE E GRATUITO</p>
+                            <h3 class="text-xl font-bold mb-2 text-gray-900">Em qual região você está?</h3>
+                            <p class="text-sm text-gray-600">Trabalhamos com planos personalizados de acordo com cada região.</p>
+                        </div>
+                        
+                        <div class="max-w-md mx-auto space-y-4">
                             <div>
-                                <label for="nome-completo" class="block text-sm font-medium text-gray-700 mb-2">Nome Completo *</label>
-                                <input type="text" id="nome-completo" name="nome-completo" required class="w-full px-4 py-3 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                            </div>
-                            <div>
-                                <label for="email-orçamento" class="block text-sm font-medium text-gray-700 mb-2">E-mail *</label>
-                                <input type="email" id="email-orçamento" name="email-orçamento" required class="w-full px-4 py-3 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                            </div>
-                            <div>
-                                <label for="telefone-orçamento" class="block text-sm font-medium text-gray-700 mb-2">Telefone *</label>
-                                <input type="tel" id="telefone-orçamento" name="telefone-orçamento" required class="w-full px-4 py-3 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                            </div>
-                            <div>
-                                <label for="modalidade" class="block text-sm font-medium text-gray-700 mb-2">Modalidade *</label>
-                                <select id="modalidade" name="modalidade" required class="w-full px-4 py-3 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                                    <option value="">Selecione uma opção</option>
-                                    <option value="individual">Individual</option>
-                                    <option value="familiar">Familiar</option>
-                                    <option value="empresarial">Empresarial</option>
-                                    <option value="adesão">Adesao</option>
+                                <select id="estado" name="estado" required class="w-full px-4 py-3 bg-white text-gray-900 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                    <option value="">Selecione seu estado</option>
+                                    <option value="AC">Acre</option>
+                                    <option value="AL">Alagoas</option>
+                                    <option value="AP">Amapá</option>
+                                    <option value="AM">Amazonas</option>
+                                    <option value="BA">Bahia</option>
+                                    <option value="CE">Ceará</option>
+                                    <option value="DF">Distrito Federal</option>
+                                    <option value="ES">Espírito Santo</option>
+                                    <option value="GO">Goiás</option>
+                                    <option value="MA">Maranhão</option>
+                                    <option value="MT">Mato Grosso</option>
+                                    <option value="MS">Mato Grosso do Sul</option>
+                                    <option value="MG">Minas Gerais</option>
+                                    <option value="PA">Pará</option>
+                                    <option value="PB">Paraíba</option>
+                                    <option value="PR">Paraná</option>
+                                    <option value="PE">Pernambuco</option>
+                                    <option value="PI">Piauí</option>
+                                    <option value="RJ">Rio de Janeiro</option>
+                                    <option value="RN">Rio Grande do Norte</option>
+                                    <option value="RS">Rio Grande do Sul</option>
+                                    <option value="RO">Rondônia</option>
+                                    <option value="RR">Roraima</option>
+                                    <option value="SC">Santa Catarina</option>
+                                    <option value="SP">São Paulo</option>
+                                    <option value="SE">Sergipe</option>
+                                    <option value="TO">Tocantins</option>
                                 </select>
                             </div>
+                            
+                            <div>
+                                <input type="text" id="cidade" name="cidade" placeholder="Digite sua cidade" required class="w-full px-4 py-3 bg-white text-gray-900 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            </div>
+                            
+                            <button type="button" id="btn-iniciar" class="w-full bg-blue-600 text-white py-3 rounded-lg font-bold hover:bg-blue-700 transition-colors">
+                                INICIAR SIMULAÇÃO
+                            </button>
                         </div>
-                        <button type="submit" class="w-full bg-blue-600 text-white py-4 rounded-2xl font-semibold hover:bg-blue-700 transition-colors flex items-center justify-center space-x-2">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
-                            </svg>
-                            <span>Solicitar orçamento</span>
-                        </button>
-                    </form>
-                    <div id="orçamento-success" class="hidden mt-4 p-4 bg-green-100 text-green-800 rounded-2xl text-center">
-                        lorem ipsum
+                    </div>
+                    
+                    <!-- Passo 2 -->
+                    <div id="passo-2" class="bg-white rounded-2xl p-8 text-gray-900 hidden">
+                        <div class="text-center mb-8">
+                            <span class="text-sm font-medium mb-2 block text-gray-600">Passo 2 de 5</span>
+                            <h2 class="text-3xl font-bold mb-4 text-gray-900">SIMULADOR DE PLANOS</h2>
+                            <p class="text-lg mb-6 text-gray-600">100% ONLINE E GRATUITO</p>
+                            <h3 class="text-xl font-bold mb-2 text-gray-900">Que tipo de plano deseja cotar?</h3>
+                        </div>
+                        
+                        <div class="max-w-md mx-auto space-y-4">
+                            <div>
+                                <select id="tipo-plano" name="tipo-plano" required class="w-full px-4 py-3 bg-white text-gray-900 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                    <option value="">Que tipo de plano deseja cotar?</option>
+                                    <option value="Plano de Saúde Individual">Plano de Saúde Individual</option>
+                                    <option value="Plano de Saúde Familiar">Plano de Saúde Familiar</option>
+                                    <option value="Plano de Saúde para Crianças">Plano de Saúde para Crianças</option>
+                                    <option value="Plano de Saúde para Gestantes">Plano de Saúde para Gestantes</option>
+                                    <option value="Plano de Saúde Sênior">Plano de Saúde Sênior</option>
+                                    <option value="Plano de Saúde MEI">Plano de Saúde MEI</option>
+                                    <option value="Plano de Saúde PME">Plano de Saúde PME</option>
+                                    <option value="Plano de Saúde Empresarial">Plano de Saúde Empresarial</option>
+                                    <option value="Plano de Saúde por Adesão">Plano de Saúde por Adesão</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <select id="possui-plano" name="possui-plano" required class="w-full px-4 py-3 bg-white text-gray-900 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                    <option value="">Você possui algum plano atualmente?</option>
+                                    <option value="sim">Sim</option>
+                                    <option value="nao">Não</option>
+                                </select>
+                            </div>
+                            
+                            <div id="operadora-field" class="hidden">
+                                <input type="text" id="operadora" name="operadora" placeholder="Qual operadora/seguradora?" class="w-full px-4 py-3 bg-white text-gray-900 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            </div>
+                            
+                            <div class="flex space-x-4">
+                                <button type="button" id="btn-anterior-2" class="flex-1 bg-gray-500 text-white py-3 rounded-lg font-bold hover:bg-gray-600 transition-colors">
+                                    ANTERIOR
+                                </button>
+                                <button type="button" id="btn-avancar-2" class="flex-1 bg-blue-600 text-white py-3 rounded-lg font-bold hover:bg-blue-700 transition-colors">
+                                    AVANÇAR
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Passo 3 -->
+                    <div id="passo-3" class="bg-white rounded-2xl p-8 text-gray-900 hidden">
+                        <div class="text-center mb-8">
+                            <span class="text-sm font-medium mb-2 block text-gray-600">Passo 3 de 5</span>
+                            <h2 class="text-3xl font-bold mb-4 text-gray-900">SIMULADOR DE PLANOS</h2>
+                            <p class="text-lg mb-6 text-gray-600">100% ONLINE E GRATUITO</p>
+                            <h3 class="text-xl font-bold mb-2 text-gray-900">Forma de contratação?</h3>
+                            <p class="text-sm text-gray-600">As opções de planos disponíveis para contratação variam de acordo com essas informações</p>
+                        </div>
+                        
+                        <div class="max-w-md mx-auto space-y-4">
+                            <div>
+                                <select id="possui-cnpj" name="possui-cnpj" required class="w-full px-4 py-3 bg-white text-gray-900 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                    <option value="">Possui CNPJ?</option>
+                                    <option value="sim">Sim</option>
+                                    <option value="nao">Não</option>
+                                </select>
+                            </div>
+                            
+                            <div id="formacao-field" class="hidden">
+                                <select id="formacao-academica" name="formacao-academica" class="w-full px-4 py-3 bg-white text-gray-900 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                    <option value="">Possui Formação Acadêmica?</option>
+                                    <option value="profissional-liberal">Profissional Liberal</option>
+                                    <option value="funcionario-publico">Funcionário Público</option>
+                                    <option value="funcionario-clt">Funcionário CLT</option>
+                                    <option value="estudante-fundamental">Estudante de Ensino Fundamental</option>
+                                    <option value="estudante-medio">Estudante de Ensino Médio</option>
+                                    <option value="estudante-superior">Estudante de Ensino Superior</option>
+                                    <option value="autonomo">Autônomo</option>
+                                    <option value="nenhuma">Nenhuma das opções</option>
+                                </select>
+                            </div>
+                            
+                            <div id="profissao-field" class="hidden">
+                                <select id="profissao" name="profissao" class="w-full px-4 py-3 bg-white text-gray-900 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                    <option value="">Qual é sua profissão?</option>
+                                    <option value="Administrador">Administrador</option>
+                                    <option value="Advogado">Advogado</option>
+                                    <option value="Agrônomo">Agrônomo</option>
+                                    <option value="Antropólogo">Antropólogo</option>
+                                    <option value="Arquiteto e Urbanista">Arquiteto e Urbanista</option>
+                                    <option value="Arquivista">Arquivista</option>
+                                    <option value="Artista Plástico">Artista Plástico</option>
+                                    <option value="Assistente Social">Assistente Social</option>
+                                    <option value="Astrônomo">Astrônomo</option>
+                                    <option value="Ator">Ator</option>
+                                    <option value="Ator, Diretor de Teatro, Dramaturgo (dependendo da especialização)">Ator, Diretor de Teatro, Dramaturgo (dependendo da especialização)</option>
+                                    <option value="Bibliotecário">Bibliotecário</option>
+                                    <option value="Biofísico">Biofísico</option>
+                                    <option value="Biólogo">Biólogo</option>
+                                    <option value="Bioquímico">Bioquímico</option>
+                                    <option value="Biotecnologista">Biotecnologista</option>
+                                    <option value="Cientista da Computação ou Programador">Cientista da Computação ou Programador</option>
+                                    <option value="Cientista Político">Cientista Político</option>
+                                    <option value="Cineasta">Cineasta</option>
+                                    <option value="Contador">Contador</option>
+                                    <option value="Dentista">Dentista</option>
+                                    <option value="Designer de Interiores">Designer de Interiores</option>
+                                    <option value="Designer Gráfico">Designer Gráfico</option>
+                                    <option value="Diretor de Cinema">Diretor de Cinema</option>
+                                    <option value="Ecologista">Ecologista</option>
+                                    <option value="Economista">Economista</option>
+                                    <option value="Educador Físico">Educador Físico</option>
+                                    <option value="Enfermeiro">Enfermeiro</option>
+                                    <option value="Engenheiro (diversos)">Engenheiro (diversos)</option>
+                                    <option value="Estilista ou Designer de Moda">Estilista ou Designer de Moda</option>
+                                    <option value="Farmacêutico">Farmacêutico</option>
+                                    <option value="Filósofo">Filósofo</option>
+                                    <option value="Físico">Físico</option>
+                                    <option value="Fisioterapeuta">Fisioterapeuta</option>
+                                    <option value="Fonoaudiólogo">Fonoaudiólogo</option>
+                                    <option value="Fotógrafo">Fotógrafo</option>
+                                    <option value="Geofísico">Geofísico</option>
+                                    <option value="Geógrafo">Geógrafo</option>
+                                    <option value="Geólogo">Geólogo</option>
+                                    <option value="Historiador">Historiador</option>
+                                    <option value="Jornalista">Jornalista</option>
+                                    <option value="Linguista">Linguista</option>
+                                    <option value="Matemático">Matemático</option>
+                                    <option value="Médico">Médico</option>
+                                    <option value="Médico Veterinário">Médico Veterinário</option>
+                                    <option value="Meteorologista">Meteorologista</option>
+                                    <option value="Museólogo">Museólogo</option>
+                                    <option value="Músico">Músico</option>
+                                    <option value="Oceanógrafo">Oceanógrafo</option>
+                                    <option value="Produtor de Cinema">Produtor de Cinema</option>
+                                    <option value="Professor de Línguas ou Tradutor">Professor de Línguas ou Tradutor</option>
+                                    <option value="Profissional de Saúde Coletiva">Profissional de Saúde Coletiva</option>
+                                    <option value="Profissional de Turismo">Profissional de Turismo</option>
+                                    <option value="Psicólogo">Psicólogo</option>
+                                    <option value="Publicitário">Publicitário</option>
+                                    <option value="Químico">Químico</option>
+                                    <option value="Relações Internacionais">Relações Internacionais</option>
+                                    <option value="Relações Públicas">Relações Públicas</option>
+                                    <option value="Sociólogo">Sociólogo</option>
+                                    <option value="Zootecnista">Zootecnista</option>
+                                </select>
+                            </div>
+                            
+                            <div id="diploma-field" class="hidden">
+                                <select id="possui-diploma" name="possui-diploma" class="w-full px-4 py-3 bg-white text-gray-900 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                    <option value="">Possui diploma?</option>
+                                    <option value="sim">Sim</option>
+                                    <option value="nao">Não</option>
+                                </select>
+                            </div>
+                            
+                            <!-- Campos para quando possui CNPJ -->
+                            <div id="cnpj-fields" class="hidden space-y-4">
+                                <div>
+                                    <select id="plano-pessoas" name="plano-pessoas" class="w-full px-4 py-3 bg-white text-gray-900 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                        <option value="">Plano para quantas Pessoas?</option>
+                                        <option value="1 a 9 pessoas (exclusivo SP)">1 a 9 pessoas (exclusivo SP)</option>
+                                        <option value="2 a 9 pessoas">2 a 9 pessoas</option>
+                                        <option value="10 ou mais pessoas">10 ou mais pessoas</option>
+                                    </select>
+                                </div>
+                                
+                                <div>
+                                    <input type="text" id="cnpj" name="cnpj" placeholder="Informe seu CNPJ" class="w-full px-4 py-3 bg-white text-gray-900 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                </div>
+                                
+                                <div>
+                                    <input type="text" id="ramo-negocio" name="ramo-negocio" placeholder="Qual o ramo do seu negócio?" class="w-full px-4 py-3 bg-white text-gray-900 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                </div>
+                            </div>
+                            
+                            <div class="flex space-x-4">
+                                <button type="button" id="btn-anterior-3" class="flex-1 bg-gray-500 text-white py-3 rounded-lg font-bold hover:bg-gray-600 transition-colors">
+                                    ANTERIOR
+                                </button>
+                                <button type="button" id="btn-avancar-3" class="flex-1 bg-blue-600 text-white py-3 rounded-lg font-bold hover:bg-blue-700 transition-colors">
+                                    AVANÇAR
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Passo 4 -->
+                    <div id="passo-4" class="bg-white rounded-2xl p-8 text-gray-900 hidden">
+                        <div class="text-center mb-8">
+                            <span class="text-sm font-medium mb-2 block text-gray-600">Passo 4 de 5</span>
+                            <h2 class="text-3xl font-bold mb-4 text-gray-900">SIMULADOR DE PLANOS</h2>
+                            <p class="text-lg mb-6 text-gray-600">100% ONLINE E GRATUITO</p>
+                            <h3 class="text-xl font-bold mb-2 text-gray-900">Quantidade de Pessoas</h3>
+                            <p class="text-sm text-gray-600">Informe quantas pessoas irão aderir ao plano por faixa etária.</p>
+                        </div>
+                        
+                        <div class="max-w-4xl mx-auto">
+                            <div class="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8">
+                                <div>
+                                    <select id="idade-00-18" name="idade-00-18" class="w-full px-4 py-3 bg-white text-gray-900 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                        <option value="">00-18 anos</option>
+                                        <option value="0">0 pessoas</option>
+                                        <option value="1">1 pessoa</option>
+                                        <option value="2">2 pessoas</option>
+                                        <option value="3">3 pessoas</option>
+                                        <option value="4">4 pessoas</option>
+                                        <option value="5">5 pessoas</option>
+                                        <option value="6">6 pessoas</option>
+                                        <option value="7">7 pessoas</option>
+                                        <option value="8">8 pessoas</option>
+                                        <option value="9">9 pessoas</option>
+                                        <option value="10">10 pessoas</option>
+                                        <option value="999">mais de 10 pessoas</option>
+                                    </select>
+                                </div>
+                                
+                                <div>
+                                    <select id="idade-19-23" name="idade-19-23" class="w-full px-4 py-3 bg-white text-gray-900 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                        <option value="">19-23 anos</option>
+                                        <option value="0">0 pessoas</option>
+                                        <option value="1">1 pessoa</option>
+                                        <option value="2">2 pessoas</option>
+                                        <option value="3">3 pessoas</option>
+                                        <option value="4">4 pessoas</option>
+                                        <option value="5">5 pessoas</option>
+                                        <option value="6">6 pessoas</option>
+                                        <option value="7">7 pessoas</option>
+                                        <option value="8">8 pessoas</option>
+                                        <option value="9">9 pessoas</option>
+                                        <option value="10">10 pessoas</option>
+                                        <option value="999">mais de 10 pessoas</option>
+                                    </select>
+                                </div>
+                                
+                                <div>
+                                    <select id="idade-24-28" name="idade-24-28" class="w-full px-4 py-3 bg-white text-gray-900 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                        <option value="">24-28 anos</option>
+                                        <option value="0">0 pessoas</option>
+                                        <option value="1">1 pessoa</option>
+                                        <option value="2">2 pessoas</option>
+                                        <option value="3">3 pessoas</option>
+                                        <option value="4">4 pessoas</option>
+                                        <option value="5">5 pessoas</option>
+                                        <option value="6">6 pessoas</option>
+                                        <option value="7">7 pessoas</option>
+                                        <option value="8">8 pessoas</option>
+                                        <option value="9">9 pessoas</option>
+                                        <option value="10">10 pessoas</option>
+                                        <option value="999">mais de 10 pessoas</option>
+                                    </select>
+                                </div>
+                                
+                                <div>
+                                    <select id="idade-29-33" name="idade-29-33" class="w-full px-4 py-3 bg-white text-gray-900 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                        <option value="">29-33 anos</option>
+                                        <option value="0">0 pessoas</option>
+                                        <option value="1">1 pessoa</option>
+                                        <option value="2">2 pessoas</option>
+                                        <option value="3">3 pessoas</option>
+                                        <option value="4">4 pessoas</option>
+                                        <option value="5">5 pessoas</option>
+                                        <option value="6">6 pessoas</option>
+                                        <option value="7">7 pessoas</option>
+                                        <option value="8">8 pessoas</option>
+                                        <option value="9">9 pessoas</option>
+                                        <option value="10">10 pessoas</option>
+                                        <option value="999">mais de 10 pessoas</option>
+                                    </select>
+                                </div>
+                                
+                                <div>
+                                    <select id="idade-34-38" name="idade-34-38" class="w-full px-4 py-3 bg-white text-gray-900 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                        <option value="">34-38 anos</option>
+                                        <option value="0">0 pessoas</option>
+                                        <option value="1">1 pessoa</option>
+                                        <option value="2">2 pessoas</option>
+                                        <option value="3">3 pessoas</option>
+                                        <option value="4">4 pessoas</option>
+                                        <option value="5">5 pessoas</option>
+                                        <option value="6">6 pessoas</option>
+                                        <option value="7">7 pessoas</option>
+                                        <option value="8">8 pessoas</option>
+                                        <option value="9">9 pessoas</option>
+                                        <option value="10">10 pessoas</option>
+                                        <option value="999">mais de 10 pessoas</option>
+                                    </select>
+                                </div>
+                                
+                                <div>
+                                    <select id="idade-39-43" name="idade-39-43" class="w-full px-4 py-3 bg-white text-gray-900 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                        <option value="">39-43 anos</option>
+                                        <option value="0">0 pessoas</option>
+                                        <option value="1">1 pessoa</option>
+                                        <option value="2">2 pessoas</option>
+                                        <option value="3">3 pessoas</option>
+                                        <option value="4">4 pessoas</option>
+                                        <option value="5">5 pessoas</option>
+                                        <option value="6">6 pessoas</option>
+                                        <option value="7">7 pessoas</option>
+                                        <option value="8">8 pessoas</option>
+                                        <option value="9">9 pessoas</option>
+                                        <option value="10">10 pessoas</option>
+                                        <option value="999">mais de 10 pessoas</option>
+                                    </select>
+                                </div>
+                                
+                                <div>
+                                    <select id="idade-44-48" name="idade-44-48" class="w-full px-4 py-3 bg-white text-gray-900 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                        <option value="">44-48 anos</option>
+                                        <option value="0">0 pessoas</option>
+                                        <option value="1">1 pessoa</option>
+                                        <option value="2">2 pessoas</option>
+                                        <option value="3">3 pessoas</option>
+                                        <option value="4">4 pessoas</option>
+                                        <option value="5">5 pessoas</option>
+                                        <option value="6">6 pessoas</option>
+                                        <option value="7">7 pessoas</option>
+                                        <option value="8">8 pessoas</option>
+                                        <option value="9">9 pessoas</option>
+                                        <option value="10">10 pessoas</option>
+                                        <option value="999">mais de 10 pessoas</option>
+                                    </select>
+                                </div>
+                                
+                                <div>
+                                    <select id="idade-49-53" name="idade-49-53" class="w-full px-4 py-3 bg-white text-gray-900 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                        <option value="">49-53 anos</option>
+                                        <option value="0">0 pessoas</option>
+                                        <option value="1">1 pessoa</option>
+                                        <option value="2">2 pessoas</option>
+                                        <option value="3">3 pessoas</option>
+                                        <option value="4">4 pessoas</option>
+                                        <option value="5">5 pessoas</option>
+                                        <option value="6">6 pessoas</option>
+                                        <option value="7">7 pessoas</option>
+                                        <option value="8">8 pessoas</option>
+                                        <option value="9">9 pessoas</option>
+                                        <option value="10">10 pessoas</option>
+                                        <option value="999">mais de 10 pessoas</option>
+                                    </select>
+                                </div>
+                                
+                                <div>
+                                    <select id="idade-54-58" name="idade-54-58" class="w-full px-4 py-3 bg-white text-gray-900 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                        <option value="">54-58 anos</option>
+                                        <option value="0">0 pessoas</option>
+                                        <option value="1">1 pessoa</option>
+                                        <option value="2">2 pessoas</option>
+                                        <option value="3">3 pessoas</option>
+                                        <option value="4">4 pessoas</option>
+                                        <option value="5">5 pessoas</option>
+                                        <option value="6">6 pessoas</option>
+                                        <option value="7">7 pessoas</option>
+                                        <option value="8">8 pessoas</option>
+                                        <option value="9">9 pessoas</option>
+                                        <option value="10">10 pessoas</option>
+                                        <option value="999">mais de 10 pessoas</option>
+                                    </select>
+                                </div>
+                                
+                                <div>
+                                    <select id="idade-59-plus" name="idade-59-plus" class="w-full px-4 py-3 bg-white text-gray-900 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                        <option value="">59 anos ou mais</option>
+                                        <option value="0">0 pessoas</option>
+                                        <option value="1">1 pessoa</option>
+                                        <option value="2">2 pessoas</option>
+                                        <option value="3">3 pessoas</option>
+                                        <option value="4">4 pessoas</option>
+                                        <option value="5">5 pessoas</option>
+                                        <option value="6">6 pessoas</option>
+                                        <option value="7">7 pessoas</option>
+                                        <option value="8">8 pessoas</option>
+                                        <option value="9">9 pessoas</option>
+                                        <option value="10">10 pessoas</option>
+                                        <option value="999">mais de 10 pessoas</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div id="alerta-adulto" class="hidden bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+                                <p class="text-sm">É necessário ter pelo menos 1 adulto (19+ anos) no plano.</p>
+                            </div>
+                            
+                            <div class="flex space-x-4">
+                                <button type="button" id="btn-anterior-4" class="flex-1 bg-gray-500 text-white py-3 rounded-lg font-bold hover:bg-gray-600 transition-colors">
+                                    ANTERIOR
+                                </button>
+                                <button type="button" id="btn-avancar-4" class="flex-1 bg-blue-600 text-white py-3 rounded-lg font-bold hover:bg-blue-700 transition-colors">
+                                    AVANÇAR
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Passo 5 -->
+                    <div id="passo-5" class="bg-white rounded-2xl p-8 text-gray-900 hidden">
+                        <div class="text-center mb-8">
+                            <span class="text-sm font-medium mb-2 block text-gray-600">Passo 5 de 5</span>
+                            <h2 class="text-3xl font-bold mb-4 text-gray-900">SIMULADOR DE PLANOS</h2>
+                            <p class="text-lg mb-6 text-gray-600">100% ONLINE E GRATUITO</p>
+                            <h3 class="text-xl font-bold mb-2 text-gray-900">Dados para Contato</h3>
+                            <p class="text-sm text-gray-600">Preencha seus dados para receber a tabela de planos.</p>
+                        </div>
+                        
+                        <div class="max-w-md mx-auto space-y-4">
+                            <div>
+                                <input type="text" id="nome-final" name="nome-final" placeholder="Nome Completo" required class="w-full px-4 py-3 bg-white text-gray-900 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            </div>
+                            <div>
+                                <input type="tel" id="contato-final" name="contato-final" placeholder="Telefone" required class="w-full px-4 py-3 bg-white text-gray-900 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            </div>
+                            <div>
+                                <input type="email" id="email-final" name="email-final" placeholder="E-mail" required class="w-full px-4 py-3 bg-white text-gray-900 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            </div>
+                            <div class="flex space-x-4">
+                                <button type="button" id="btn-voltar-5" class="flex-1 bg-gray-500 text-white py-3 rounded-lg font-bold hover:bg-gray-600 transition-colors">
+                                    VOLTAR
+                                </button>
+                                <button type="button" id="btn-gerar-tabela" class="flex-1 bg-blue-600 text-white py-3 rounded-lg font-bold hover:bg-blue-700 transition-colors">
+                                    GERAR TABELA
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-    </main>
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-white">
@@ -298,6 +778,7 @@
         </svg>
     </a>
 
+    <script src="simulador-simples.js"></script>
     <script src="main.js"></script>
 </body>
 </html>

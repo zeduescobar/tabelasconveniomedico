@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Planos de Saúde</title>
+    <link rel="stylesheet" href="simulador.css">
+</head>
+<body>
+    <div class="simulador-container">
+        <!-- Passo 1: Localização -->
+        <div id="passo-1" class="simulador-passo ativo">
+            <div class="simulador-header">
+                <div class="simulador-passos-info">
+                    <span>Passo 1 de 5</span>
+                </div>
+                <h2 class="simulador-titulo">SIMULADOR DE PLANOS</h2>
+                <p class="simulador-subtitulo">100% ONLINE E GRATUITO</p>
+                <h3 class="simulador-pergunta">Em qual região você está?</h3>
+                <p class="simulador-descricao">Trabalhamos com planos personalizados de acordo com cada região.</p>
+            </div>
+            
+            <select id="estado" class="simulador-campo" required>
+                <option value="">Selecione seu estado</option>
+                <option value="AC">Acre</option>
+                <option value="AL">Alagoas</option>
+                <option value="AP">Amapá</option>
+                <option value="AM">Amazonas</option>
+                <option value="BA">Bahia</option>
+                <option value="CE">Ceará</option>
+                <option value="DF">Distrito Federal</option>
+                <option value="ES">Espírito Santo</option>
+                <option value="GO">Goiás</option>
+                <option value="MA">Maranhão</option>
+                <option value="MT">Mato Grosso</option>
+                <option value="MS">Mato Grosso do Sul</option>
+                <option value="MG">Minas Gerais</option>
+                <option value="PA">Pará</option>
+                <option value="PB">Paraíba</option>
+                <option value="PR">Paraná</option>
+                <option value="PE">Pernambuco</option>
+                <option value="PI">Piauí</option>
+                <option value="RJ">Rio de Janeiro</option>
+                <option value="RN">Rio Grande do Norte</option>
+                <option value="RS">Rio Grande do Sul</option>
+                <option value="RO">Rondônia</option>
+                <option value="RR">Roraima</option>
+                <option value="SC">Santa Catarina</option>
+                <option value="SP">São Paulo</option>
+                <option value="SE">Sergipe</option>
+                <option value="TO">Tocantins</option>
+            </select>
+            
+            <input type="text" id="cidade" class="simulador-campo" placeholder="Digite sua cidade" required>
+            
+            <div class="simulador-botoes">
+                <button type="button" id="btn-iniciar" class="simulador-botao simulador-botao-primario">
+                    INICIAR SIMULAÇÃO
+                </button>
+            </div>
+        </div>
+        
+        <!-- Passo 2: Plano Atual -->
+        <div id="passo-2" class="simulador-passo">
+            <div class="simulador-header">
+                <div class="simulador-passos-info">
+                    <span>Passo 2 de 5</span>
+                </div>
+                <h2 class="simulador-titulo">SIMULADOR DE PLANOS</h2>
+                <p class="simulador-subtitulo">100% ONLINE E GRATUITO</p>
+                <h3 class="simulador-pergunta">Você possui algum plano atualmente?</h3>
+            </div>
+            
+            <select id="possui-plano" class="simulador-campo" required>
+                <option value="">Você possui algum plano atualmente?</option>
+                <option value="sim">Sim</option>
+                <option value="nao">Não</option>
+            </select>
+            
+            <div id="operadora-field" class="simulador-campo-condicional">
+                <input type="text" id="operadora" class="simulador-campo" placeholder="Qual operadora/seguradora?">
+            </div>
+            
+            <div class="simulador-botoes">
+                <button type="button" id="btn-anterior-2" class="simulador-botao simulador-botao-secundario">
+                    ANTERIOR
+                </button>
+                <button type="button" id="btn-avancar-2" class="simulador-botao simulador-botao-primario">
+                    AVANÇAR
+                </button>
+            </div>
+        </div>
+        
+        <!-- Passo 3: Perfil -->
+        <div id="passo-3" class="simulador-passo">
+            <div class="simulador-header">
+                <div class="simulador-passos-info">
+                    <span>Passo 3 de 5</span>
+                </div>
+                <h2 class="simulador-titulo">SIMULADOR DE PLANOS</h2>
+                <p class="simulador-subtitulo">100% ONLINE E GRATUITO</p>
+                <h3 class="simulador-pergunta">Possui CNPJ?</h3>
+            </div>
+            
+            <select id="possui-cnpj" class="simulador-campo" required>
+                <option value="">Possui CNPJ?</option>
+                <option value="sim">Sim</option>
+                <option value="nao">Não</option>
+            </select>
+            
+            <!-- Campos para Pessoa Física -->
+            <div id="formacao-field" class="simulador-campo-condicional">
+                <select id="formacao-academica" class="simulador-campo">
+                    <option value="">Qual sua formação acadêmica?</option>
+                    <option value="profissional-liberal">Profissional Liberal</option>
+                    <option value="outros">Outros</option>
+                </select>
+                
+                <div id="profissao-field" class="simulador-campo-condicional">
+                    <select id="profissao" class="simulador-campo">
+                        <option value="">Qual é sua profissão?</option>
+                        <option value="medico">Médico</option>
+                        <option value="advogado">Advogado</option>
+                        <option value="engenheiro">Engenheiro</option>
+                        <option value="contador">Contador</option>
+                        <option value="outros">Outros</option>
+                    </select>
+                    
+                    <div id="diploma-field" class="simulador-campo-condicional">
+                        <select id="possui-diploma" class="simulador-campo">
+                            <option value="">Possui diploma?</option>
+                            <option value="sim">Sim</option>
+                            <option value="nao">Não</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Campos para Pessoa Jurídica -->
+            <div id="cnpj-fields" class="simulador-campo-condicional">
+                <select id="plano-pessoas" class="simulador-campo">
+                    <option value="">Plano para quantas Pessoas?</option>
+                    <option value="1-9-sp">1 a 9 pessoas (exclusivo SP)</option>
+                    <option value="2-9">2 a 9 pessoas</option>
+                    <option value="10+">10 ou mais pessoas</option>
+                </select>
+                
+                <input type="text" id="cnpj" class="simulador-campo" placeholder="Informe seu CNPJ">
+                
+                <input type="text" id="ramo-negocio" class="simulador-campo" placeholder="Qual o ramo do seu negócio?">
+            </div>
+            
+            <div class="simulador-botoes">
+                <button type="button" id="btn-anterior-3" class="simulador-botao simulador-botao-secundario">
+                    ANTERIOR
+                </button>
+                <button type="button" id="btn-avancar-3" class="simulador-botao simulador-botao-primario">
+                    AVANÇAR
+                </button>
+            </div>
+        </div>
+        
+        <!-- Passo 4: Quantidade por Idade -->
+        <div id="passo-4" class="simulador-passo">
+            <div class="simulador-header">
+                <div class="simulador-passos-info">
+                    <span>Passo 4 de 5</span>
+                </div>
+                <h2 class="simulador-titulo">SIMULADOR DE PLANOS</h2>
+                <p class="simulador-subtitulo">100% ONLINE E GRATUITO</p>
+                <h3 class="simulador-pergunta">Quantidade de Pessoas</h3>
+                <p class="simulador-descricao">Informe quantas pessoas irão aderir ao plano por faixa etária.</p>
+            </div>
+            
+            <div id="alerta-adulto" class="simulador-alerta">
+                Para prosseguir com a simulação é necessário informar + de 1 adulto.
+            </div>
+            
+            <div class="simulador-grid-idades">
+                <select id="idade-00-18" class="simulador-campo">
+                    <option value="">00-18 anos</option>
+                    <option value="0">0 pessoas</option>
+                    <option value="1">1 pessoa</option>
+                    <option value="2">2 pessoas</option>
+                    <option value="3">3 pessoas</option>
+                    <option value="4">4 pessoas</option>
+                    <option value="5">5 pessoas</option>
+                    <option value="6">6 pessoas</option>
+                    <option value="7">7 pessoas</option>
+                    <option value="8">8 pessoas</option>
+                    <option value="9">9 pessoas</option>
+                    <option value="10">10 pessoas</option>
+                    <option value="999">mais de 10 pessoas</option>
+                </select>
+                
+                <select id="idade-19-23" class="simulador-campo">
+                    <option value="">19-23 anos</option>
+                    <option value="0">0 pessoas</option>
+                    <option value="1">1 pessoa</option>
+                    <option value="2">2 pessoas</option>
+                    <option value="3">3 pessoas</option>
+                    <option value="4">4 pessoas</option>
+                    <option value="5">5 pessoas</option>
+                    <option value="6">6 pessoas</option>
+                    <option value="7">7 pessoas</option>
+                    <option value="8">8 pessoas</option>
+                    <option value="9">9 pessoas</option>
+                    <option value="10">10 pessoas</option>
+                    <option value="999">mais de 10 pessoas</option>
+                </select>
+                
+                <select id="idade-24-28" class="simulador-campo">
+                    <option value="">24-28 anos</option>
+                    <option value="0">0 pessoas</option>
+                    <option value="1">1 pessoa</option>
+                    <option value="2">2 pessoas</option>
+                    <option value="3">3 pessoas</option>
+                    <option value="4">4 pessoas</option>
+                    <option value="5">5 pessoas</option>
+                    <option value="6">6 pessoas</option>
+                    <option value="7">7 pessoas</option>
+                    <option value="8">8 pessoas</option>
+                    <option value="9">9 pessoas</option>
+                    <option value="10">10 pessoas</option>
+                    <option value="999">mais de 10 pessoas</option>
+                </select>
+                
+                <select id="idade-29-33" class="simulador-campo">
+                    <option value="">29-33 anos</option>
+                    <option value="0">0 pessoas</option>
+                    <option value="1">1 pessoa</option>
+                    <option value="2">2 pessoas</option>
+                    <option value="3">3 pessoas</option>
+                    <option value="4">4 pessoas</option>
+                    <option value="5">5 pessoas</option>
+                    <option value="6">6 pessoas</option>
+                    <option value="7">7 pessoas</option>
+                    <option value="8">8 pessoas</option>
+                    <option value="9">9 pessoas</option>
+                    <option value="10">10 pessoas</option>
+                    <option value="999">mais de 10 pessoas</option>
+                </select>
+                
+                <select id="idade-34-38" class="simulador-campo">
+                    <option value="">34-38 anos</option>
+                    <option value="0">0 pessoas</option>
+                    <option value="1">1 pessoa</option>
+                    <option value="2">2 pessoas</option>
+                    <option value="3">3 pessoas</option>
+                    <option value="4">4 pessoas</option>
+                    <option value="5">5 pessoas</option>
+                    <option value="6">6 pessoas</option>
+                    <option value="7">7 pessoas</option>
+                    <option value="8">8 pessoas</option>
+                    <option value="9">9 pessoas</option>
+                    <option value="10">10 pessoas</option>
+                    <option value="999">mais de 10 pessoas</option>
+                </select>
+                
+                <select id="idade-39-43" class="simulador-campo">
+                    <option value="">39-43 anos</option>
+                    <option value="0">0 pessoas</option>
+                    <option value="1">1 pessoa</option>
+                    <option value="2">2 pessoas</option>
+                    <option value="3">3 pessoas</option>
+                    <option value="4">4 pessoas</option>
+                    <option value="5">5 pessoas</option>
+                    <option value="6">6 pessoas</option>
+                    <option value="7">7 pessoas</option>
+                    <option value="8">8 pessoas</option>
+                    <option value="9">9 pessoas</option>
+                    <option value="10">10 pessoas</option>
+                    <option value="999">mais de 10 pessoas</option>
+                </select>
+                
+                <select id="idade-44-48" class="simulador-campo">
+                    <option value="">44-48 anos</option>
+                    <option value="0">0 pessoas</option>
+                    <option value="1">1 pessoa</option>
+                    <option value="2">2 pessoas</option>
+                    <option value="3">3 pessoas</option>
+                    <option value="4">4 pessoas</option>
+                    <option value="5">5 pessoas</option>
+                    <option value="6">6 pessoas</option>
+                    <option value="7">7 pessoas</option>
+                    <option value="8">8 pessoas</option>
+                    <option value="9">9 pessoas</option>
+                    <option value="10">10 pessoas</option>
+                    <option value="999">mais de 10 pessoas</option>
+                </select>
+                
+                <select id="idade-49-53" class="simulador-campo">
+                    <option value="">49-53 anos</option>
+                    <option value="0">0 pessoas</option>
+                    <option value="1">1 pessoa</option>
+                    <option value="2">2 pessoas</option>
+                    <option value="3">3 pessoas</option>
+                    <option value="4">4 pessoas</option>
+                    <option value="5">5 pessoas</option>
+                    <option value="6">6 pessoas</option>
+                    <option value="7">7 pessoas</option>
+                    <option value="8">8 pessoas</option>
+                    <option value="9">9 pessoas</option>
+                    <option value="10">10 pessoas</option>
+                    <option value="999">mais de 10 pessoas</option>
+                </select>
+                
+                <select id="idade-54-58" class="simulador-campo">
+                    <option value="">54-58 anos</option>
+                    <option value="0">0 pessoas</option>
+                    <option value="1">1 pessoa</option>
+                    <option value="2">2 pessoas</option>
+                    <option value="3">3 pessoas</option>
+                    <option value="4">4 pessoas</option>
+                    <option value="5">5 pessoas</option>
+                    <option value="6">6 pessoas</option>
+                    <option value="7">7 pessoas</option>
+                    <option value="8">8 pessoas</option>
+                    <option value="9">9 pessoas</option>
+                    <option value="10">10 pessoas</option>
+                    <option value="999">mais de 10 pessoas</option>
+                </select>
+                
+                <select id="idade-59-plus" class="simulador-campo">
+                    <option value="">59+ anos</option>
+                    <option value="0">0 pessoas</option>
+                    <option value="1">1 pessoa</option>
+                    <option value="2">2 pessoas</option>
+                    <option value="3">3 pessoas</option>
+                    <option value="4">4 pessoas</option>
+                    <option value="5">5 pessoas</option>
+                    <option value="6">6 pessoas</option>
+                    <option value="7">7 pessoas</option>
+                    <option value="8">8 pessoas</option>
+                    <option value="9">9 pessoas</option>
+                    <option value="10">10 pessoas</option>
+                    <option value="999">mais de 10 pessoas</option>
+                </select>
+            </div>
+            
+            <div class="simulador-botoes">
+                <button type="button" id="btn-anterior-4" class="simulador-botao simulador-botao-secundario">
+                    ANTERIOR
+                </button>
+                <button type="button" id="btn-avancar-4" class="simulador-botao simulador-botao-primario">
+                    AVANÇAR
+                </button>
+            </div>
+        </div>
+        
+        <!-- Passo 5: Contato Final -->
+        <div id="passo-5" class="simulador-passo">
+            <div class="simulador-header">
+                <div class="simulador-passos-info">
+                    <span>Passo 5 de 5</span>
+                </div>
+                <h2 class="simulador-titulo">SIMULADOR DE PLANOS</h2>
+                <p class="simulador-subtitulo">100% ONLINE E GRATUITO</p>
+                <h3 class="simulador-pergunta">Dados para Contato</h3>
+                <p class="simulador-descricao">Preencha seus dados para receber a tabela personalizada.</p>
+            </div>
+            
+            <input type="text" id="nome-final" class="simulador-campo" placeholder="Nome completo" required>
+            
+            <input type="tel" id="contato-final" class="simulador-campo" placeholder="Telefone/WhatsApp" required>
+            
+            <input type="email" id="email-final" class="simulador-campo" placeholder="E-mail" required>
+            
+            <select id="modalidade-final" class="simulador-campo" required>
+                <option value="">Modalidade do plano</option>
+                <option value="individual">Individual</option>
+                <option value="familiar">Familiar</option>
+                <option value="empresarial">Empresarial</option>
+            </select>
+            
+            <div class="simulador-botoes">
+                <button type="button" id="btn-voltar-5" class="simulador-botao simulador-botao-secundario">
+                    VOLTAR
+                </button>
+                <button type="button" id="btn-gerar-tabela" class="simulador-botao simulador-botao-primario">
+                    GERAR TABELA
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="simulador-novo.js"></script>
+</body>
+</html>

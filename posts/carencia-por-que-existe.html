@@ -3,21 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carência no plano de saúde: o que é e por que existe? | Tabelas de Planos de Saúde</title>
-    <meta name="description" content="Quando alguém contrata um plano de saúde, uma das primeiras dúvidas é: 'Quando já posso usar o plano?'. A resposta envolve entender um conceito fundamental chamado carência.">
-    <meta name="keywords" content="carência plano de saúde, por que existe carência, prazos de carência, ANS, portabilidade de carências">
+    <title>Por que existe carência no plano de saúde? Entenda as regras | Tabelas de Planos de Saúde</title>
+    <meta name="description" content="Descubra por que existe carência no plano de saúde e como as regras da ANS protegem o sistema. Entenda a importância da carência para a sustentabilidade.">
+    <meta name="keywords" content="por que existe carência plano saúde, regras carência ANS, importância carência plano, sustentabilidade carência, proteção sistema carência">
     <meta name="author" content="Ródnei Ricardo Faraguti">
-    <meta property="og:title" content="Carência no plano de saúde: o que é e por que existe?">
-    <meta property="og:description" content="Quando alguém contrata um plano de saúde, uma das primeiras dúvidas é: 'Quando já posso usar o plano?'. A resposta envolve entender um conceito fundamental chamado carência.">
+    <meta property="og:title" content="Por que existe carência no plano de saúde? Entenda as regras">
+    <meta property="og:description" content="Descubra por que existe carência no plano de saúde e como as regras da ANS protegem o sistema. Entenda a importância da carência para a sustentabilidade.">
     <meta property="og:type" content="article">
     <meta property="article:author" content="Ródnei Ricardo Faraguti">
-    <meta property="article:published_time" content="2025-06-11">
-    <link rel="canonical" href="https://zeduescobar.github.io/tabelaplanosdesaude/carencia-por-que-existe.html">
+    <meta property="article:published_time" content="2025-08-06">
+    <link rel="canonical" href="https://zeduescobar.github.io/tabelaplanosdesaude/o-que-cobre-plano-saude-v2.html">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <script>
+        // Suppress Tailwind production warning
+        window.tailwind = window.tailwind || {};
+        window.tailwind.config = window.tailwind.config || {};
+        window.tailwind.config.silent = true;
+        
+        // Override console.warn to suppress Tailwind warning
+        const originalWarn = console.warn;
+        console.warn = function(...args) {
+            if (args[0] && args[0].includes('cdn.tailwindcss.com should not be used in production')) {
+                return;
+            }
+            originalWarn.apply(console, args);
+        };
+    </script>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <script>
         tailwind.config = {
             theme: {
@@ -37,8 +52,8 @@
     {
         "@context": "https://schema.org",
         "@type": "Article",
-        "headline": "Carência no plano de saúde: o que é e por que existe?",
-        "description": "Quando alguém contrata um plano de saúde, uma das primeiras dúvidas é: 'Quando já posso usar o plano?'. A resposta envolve entender um conceito fundamental chamado carência.",
+        "headline": "O que cobre o plano de saúde? Entenda seus direitos",
+        "description": "Ao contratar um plano de saúde, muitas pessoas se perguntam: afinal, o que realmente está incluso na cobertura? Entenda seus direitos e coberturas obrigatórias.",
         "author": {
             "@type": "Person",
             "name": "Ródnei Ricardo Faraguti"
@@ -47,28 +62,28 @@
             "@type": "Organization",
             "name": "Tabelas de Planos de Saúde"
         },
-        "datePublished": "2025-06-11",
-        "dateModified": "2025-06-11"
+        "datePublished": "2025-08-06",
+        "dateModified": "2025-08-06"
     }
     </script>
 </head>
-<body class="font-inter bg-gray-50">
+<body class="font-inter" style="background-color: #F9FAFB;">
     <header class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm border-b border-gray-200">
         <div class="container mx-auto px-4 py-4">
             <div class="flex items-center justify-between">
                 <div class="flex items-center space-x-2">
                     <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
-                        <img src="../favicon.svg" alt="Logo" class="w-6 h-6">
+                        <img src="../favicon.svg" alt="Logo Tabelas Planos de Saúde" class="w-6 h-6">
                     </div>
-                    <span class="text-xl font-bold text-gray-900">lorem ipsum</span>
+                    <span class="text-xl font-bold text-gray-900">Tabelas Planos de Saúde</span>
                 </div>
                 
                 <nav class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="text-gray-700 hover:text-blue-600 transition-colors">Início</a>
-                    <a href="index.html#quem-somos" class="text-gray-700 hover:text-blue-600 transition-colors">Quem Somos</a>
-                    <a href="index.html#planos" class="text-gray-700 hover:text-blue-600 transition-colors">Planos</a>
-                    <a href="blog.html" class="text-blue-600 font-semibold">Blog</a>
-                    <a href="index.html#planos" class="bg-blue-600 text-white px-6 py-2 rounded-2xl hover:bg-blue-700 transition-colors">Conheça nossos planos</a>
+                    <a href="../index.html" class="text-gray-700 hover:text-blue-600 transition-colors">Início</a>
+                    <a href="../index.html#quem-somos" class="text-gray-700 hover:text-blue-600 transition-colors">Quem Somos</a>
+                    <a href="../index.html#planos" class="text-gray-700 hover:text-blue-600 transition-colors">Planos</a>
+                    <a href="../blog.html" class="text-blue-600 font-semibold">Blog</a>
+                    <a href="../index.html#planos" class="bg-blue-600 text-white px-6 py-2 rounded-2xl hover:bg-blue-700 transition-colors">Conheça nossos planos</a>
                 </nav>
                 
                 <button id="menu-mobile-btn" class="md:hidden p-2">
@@ -81,11 +96,11 @@
         
         <div id="menu-mobile" class="md:hidden bg-white border-t border-gray-200 hidden">
             <div class="container mx-auto px-4 py-4 space-y-4">
-                <a href="index.html" class="block text-gray-700 hover:text-blue-600 transition-colors">Início</a>
-                <a href="index.html#quem-somos" class="block text-gray-700 hover:text-blue-600 transition-colors">Quem Somos</a>
-                <a href="index.html#planos" class="block text-gray-700 hover:text-blue-600 transition-colors">Planos</a>
-                <a href="blog.html" class="block text-blue-600 font-semibold">Blog</a>
-                <a href="index.html#planos" class="block bg-blue-600 text-white px-6 py-2 rounded-2xl hover:bg-blue-700 transition-colors text-center">Conheça nossos planos</a>
+                <a href="../index.html" class="block text-gray-700 hover:text-blue-600 transition-colors">Início</a>
+                <a href="../index.html#quem-somos" class="block text-gray-700 hover:text-blue-600 transition-colors">Quem Somos</a>
+                <a href="../index.html#planos" class="block text-gray-700 hover:text-blue-600 transition-colors">Planos</a>
+                <a href="../blog.html" class="block text-blue-600 font-semibold">Blog</a>
+                <a href="../index.html#planos" class="block bg-blue-600 text-white px-6 py-2 rounded-2xl hover:bg-blue-700 transition-colors text-center">Conheça nossos planos</a>
             </div>
         </div>
     </header>
@@ -99,93 +114,90 @@
                     <article class="bg-white rounded-2xl shadow-lg overflow-hidden mb-8">
                         <div class="relative">
                             <div class="w-full h-64 bg-gray-200 flex items-center justify-center overflow-hidden">
-                                <img src="../images/carencia-oq-pq.jpg" alt="Carência no plano de saúde: o que é e por que existe?" class="w-full h-full object-cover">
+                                <img src="../images/cobre-saude-direitos.png" alt="O que cobre o plano de saúde? Entenda seus direitos" class="w-full h-full object-cover">
                             </div>
                             <div class="absolute top-4 left-4">
-                                <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">11 jun</span>
+                                <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">06 ago</span>
                             </div>
                         </div>
                         <div class="p-8">
-                            <h1 class="text-3xl font-bold text-gray-900 mb-6">Carência no plano de saúde: o que é e por que existe?</h1>
+                            <h1 class="text-3xl font-bold text-gray-900 mb-6">O que cobre o plano de saúde? Entenda seus direitos</h1>
                             
                             <div class="prose max-w-none text-gray-700 mb-8">
-                                <p class="text-lg leading-relaxed mb-4">Quando alguém contrata um plano de saúde, uma das primeiras dúvidas é: "Quando já posso usar o plano?". A resposta envolve entender um conceito fundamental chamado carência. Esse é um dos pontos que mais geram questionamentos e, muitas vezes, frustração para quem precisa de atendimento rápido.</p>
+                                <p class="text-lg leading-relaxed mb-4">Ao contratar um plano de saúde, muitas pessoas se perguntam: afinal, o que realmente está incluso na cobertura? Essa dúvida é comum, já que existem diferentes modalidades de planos, cada uma com regras e limitações específicas.</p>
                                 
-                                <p class="text-lg leading-relaxed mb-4">Mas afinal, o que significa carência, como ela funciona e por que existe? Neste artigo, vamos esclarecer tudo isso de forma simples, para que você saiba exatamente o que esperar do seu plano de saúde.</p>
+                                <p class="text-lg leading-relaxed mb-4">Neste artigo, vamos explicar de forma clara e simples quais são os principais serviços que um plano oferece, como funciona a cobertura obrigatória definida pela Agência Nacional de Saúde Suplementar (ANS) e o que você precisa observar antes de contratar.</p>
 
-                                <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">O que é carência no plano de saúde?</h2>
-                                <p class="text-lg leading-relaxed mb-4">A carência é o tempo mínimo que você precisa aguardar, a partir da assinatura do contrato, para utilizar determinados serviços do seu plano de saúde.</p>
+                                <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">O que significa "cobertura do plano de saúde"?</h2>
+                                <p class="text-lg leading-relaxed mb-4">A cobertura nada mais é do que a lista de serviços médicos, hospitalares e laboratoriais que o beneficiário tem direito a utilizar. Ela varia de acordo com o tipo de contrato, mas também segue regras estabelecidas pela ANS.</p>
                                 
-                                <p class="text-lg leading-relaxed mb-4">Isso quer dizer que, mesmo que o pagamento esteja em dia, alguns procedimentos só ficam disponíveis depois de cumprido esse prazo.</p>
-                                
-                                <p class="text-lg leading-relaxed mb-4">É como em outros tipos de contratos: por exemplo, quando você faz um seguro de carro, muitas vezes existe um período em que certas coberturas ainda não estão ativas. No plano de saúde, acontece a mesma lógica.</p>
+                                <p class="text-lg leading-relaxed mb-4">Em outras palavras, quando você paga uma mensalidade do plano de saúde, está adquirindo o direito de acesso a médicos, hospitais, exames e tratamentos que fazem parte da rede credenciada ou reembolsável.</p>
 
-                                <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Por que existe esse período de carência?</h2>
-                                <p class="text-lg leading-relaxed mb-4">Muita gente acha injusto contratar um plano e não poder usar tudo imediatamente. Mas a carência tem uma função importante: manter o equilíbrio financeiro e garantir a sustentabilidade do sistema.</p>
-                                
-                                <p class="text-lg leading-relaxed mb-4">Imagine a situação: uma pessoa descobre que precisa de uma cirurgia de alto custo, contrata o plano apenas para realizar o procedimento e depois cancela. Se isso fosse permitido, os preços subiriam para todos os outros beneficiários.</p>
-                                
-                                <p class="text-lg leading-relaxed mb-4">Ou seja, a carência protege a coletividade, evitando que os planos se tornem inviáveis e muito caros.</p>
+                                <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Tipos de cobertura dos planos</h2>
+                                <p class="text-lg leading-relaxed mb-4">De forma geral, os planos são divididos em categorias de cobertura:</p>
 
-                                <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Quais são os prazos de carência?</h2>
-                                <p class="text-lg leading-relaxed mb-4">A Agência Nacional de Saúde Suplementar (ANS) regulamenta os prazos máximos de carência que as operadoras podem aplicar. Eles são:</p>
-                                
+                                <h3 class="text-xl font-bold text-gray-900 mt-6 mb-3">1. Ambulatorial</h3>
                                 <ul class="list-disc list-inside mb-4 text-lg">
-                                    <li><strong>24 horas:</strong> para atendimentos de urgência e emergência (exemplo: acidentes, risco de morte).</li>
-                                    <li><strong>30 dias:</strong> para consultas médicas e exames simples.</li>
-                                    <li><strong>180 dias (6 meses):</strong> para internações e procedimentos de maior complexidade.</li>
-                                    <li><strong>300 dias (10 meses):</strong> para parto a termo (quando o bebê nasce dentro do período normal de gestação).</li>
+                                    <li>Consultas médicas em consultórios ou clínicas.</li>
+                                    <li>Exames laboratoriais e de imagem.</li>
+                                    <li>Pequenos procedimentos que não exigem internação.</li>
                                 </ul>
-                                
-                                <p class="text-lg leading-relaxed mb-4">Esses são os limites máximos. Algumas operadoras oferecem prazos menores, como um diferencial competitivo.</p>
 
-                                <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Carência pode variar de acordo com o tipo de plano</h2>
-                                <p class="text-lg leading-relaxed mb-4">Nem todos os contratos funcionam da mesma forma. Alguns exemplos:</p>
-                                
+                                <h3 class="text-xl font-bold text-gray-900 mt-6 mb-3">2. Hospitalar</h3>
                                 <ul class="list-disc list-inside mb-4 text-lg">
-                                    <li><strong>Planos individuais ou familiares:</strong> geralmente seguem os prazos máximos da ANS.</li>
-                                    <li><strong>Planos empresariais pequenos (até 29 vidas):</strong> costumam ter carência parcial ou total, dependendo da negociação.</li>
-                                    <li><strong>Planos empresariais grandes (acima de 30 vidas):</strong> Não têm carência, pois o risco é dividido entre várias pessoas.</li>
+                                    <li>Internações em hospitais da rede credenciada.</li>
+                                    <li>Procedimentos cirúrgicos.</li>
+                                    <li>UTI, medicamentos e materiais usados durante a internação.</li>
                                 </ul>
-                                
-                                <p class="text-lg leading-relaxed mb-4">Esse detalhe faz muita diferença na hora de contratar, especialmente se a necessidade de atendimento for imediata.</p>
 
-                                <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">O que é isenção ou redução de carência?</h2>
-                                <p class="text-lg leading-relaxed mb-4">Algumas operadoras podem oferecer promoções ou condições especiais para reduzir ou até eliminar carências. Isso acontece em situações como:</p>
-                                
+                                <h3 class="text-xl font-bold text-gray-900 mt-6 mb-3">3. Hospitalar com obstetrícia</h3>
                                 <ul class="list-disc list-inside mb-4 text-lg">
-                                    <li><strong>Campanhas sazonais</strong> (exemplo: "contrate agora e tenha carência zero para consultas e exames").</li>
-                                    <li><strong>Planos empresariais grandes.</strong></li>
-                                    <li><strong>Transferência de plano com portabilidade de carências.</strong></li>
+                                    <li>Tudo que já citamos na cobertura hospitalar.</li>
+                                    <li>Atendimento completo para gestantes, incluindo parto e acompanhamento do bebê recém-nascido.</li>
                                 </ul>
-                                
-                                <p class="text-lg leading-relaxed mb-4">Essa última opção é muito interessante: se você já cumpriu a carência em um plano anterior, pode migrar para outro sem precisar recomeçar a contagem, desde que siga as regras da ANS.</p>
-                                
-                                <p class="text-lg leading-relaxed mb-4">Vale ressaltar que a portabilidade de carências só é válida dentro de certas condições. O novo plano precisa oferecer uma cobertura equivalente ao atual, o beneficiário deve estar em dia com os pagamentos e ter permanecido por pelo menos dois anos no plano de origem (ou três anos, caso tenha cumprido cobertura parcial temporária). Além disso, o pedido precisa ser realizado nos prazos estipulados pela ANS.</p>
-                                
-                                <p class="text-lg leading-relaxed mb-4">Por esses motivos, o processo pode não ser tão simples e, em muitos casos, contar com o apoio de um especialista é a melhor forma de garantir que o direito seja utilizado sem imprevistos.</p>
 
-                                <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Como a carência impacta na sua vida</h2>
-                                <p class="text-lg leading-relaxed mb-4">Saber exatamente como funcionam as carências ajuda você a não ser pego de surpresa. Muitas pessoas contratam um plano de saúde acreditando que poderão usar tudo de imediato e acabam frustradas.</p>
+                                <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">O que a ANS obriga os planos a cobrirem?</h2>
+                                <p class="text-lg leading-relaxed mb-4">A ANS estabelece o Rol de Procedimentos e Eventos em Saúde, que contém centenas de procedimentos e atendimentos médicos que todos os planos são obrigados a fornecer. Nenhum plano pode negar qualquer serviço listado nesse rol.</p>
                                 
-                                <p class="text-lg leading-relaxed mb-4">Por isso, é fundamental analisar:</p>
-                                
+                                <p class="text-lg leading-relaxed mb-4">Por se tratar de centenas de procedimentos, muitas vezes com termos técnicos, é difícil para o beneficiário ler e entender sozinho todos os itens. Mas o importante é saber que praticamente todos os planos oferecem cobertura completa para a saúde, e as diferenças entre eles estão mais relacionadas a onde os atendimentos são feitos, quais hospitais e profissionais estão na rede e serviços adicionais que cada operadora pode oferecer.</p>
+
+                                <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Entre os principais serviços obrigatórios estão:</h2>
                                 <ul class="list-disc list-inside mb-4 text-lg">
-                                    <li>Qual é a sua necessidade atual?</li>
-                                    <li>Existe urgência em algum procedimento?</li>
-                                    <li>Você está contratando para prevenção ou para uma demanda imediata?</li>
+                                    <li>Consultas médicas em diversas especialidades.</li>
+                                    <li>Exames laboratoriais básicos e avançados.</li>
+                                    <li>Cirurgias e internações hospitalares.</li>
+                                    <li>Tratamentos para doenças crônicas, como diabetes e hipertensão.</li>
+                                    <li>Atendimento em urgência e emergência.</li>
+                                    <li>Cobertura para doenças listadas pela Organização Mundial da Saúde (OMS).</li>
                                 </ul>
-                                
-                                <p class="text-lg leading-relaxed mb-4">Quanto mais clara for a sua resposta, mais fácil será escolher o plano de saúde que realmente faz sentido para você.</p>
+
+                                <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">O que pode não estar incluso?</h2>
+                                <p class="text-lg leading-relaxed mb-4">Apesar da cobertura obrigatória, existem limites que podem variar de acordo com o plano e contrato. Alguns exemplos incluem:</p>
+                                <ul class="list-disc list-inside mb-4 text-lg">
+                                    <li>Cirurgias estéticas sem indicação médica.</li>
+                                    <li>Tratamentos experimentais ainda não reconhecidos pela ANS.</li>
+                                    <li>Medicamentos de uso domiciliar, salvo exceções.</li>
+                                </ul>
+
+                                <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Como escolher o plano certo?</h2>
+                                <p class="text-lg leading-relaxed mb-4">Para não ter surpresas, siga estas dicas:</p>
+                                <ul class="list-disc list-inside mb-4 text-lg">
+                                    <li>Leia atentamente o contrato.</li>
+                                    <li>Confira a rede credenciada.</li>
+                                    <li>Veja se a cobertura atende ao seu perfil (ex.: obstetrícia para quem planeja ter filhos).</li>
+                                    <li>Pergunte sobre reembolso em caso de atendimento fora da rede.</li>
+                                </ul>
 
                                 <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Conclusão</h2>
-                                <p class="text-lg leading-relaxed mb-4">A carência é um mecanismo que garante equilíbrio e segurança no sistema de saúde suplementar. Entender como ela funciona é essencial para escolher o plano de saúde certo, sem criar expectativas erradas. Não espere até o último momento para contratar seu plano, evitando ter que cumprir novas carências e se complicar quando mais precisar.</p>
+                                <p class="text-lg leading-relaxed mb-4">O plano de saúde é um investimento essencial para quem busca segurança e tranquilidade. Entender o que ele cobre ajuda você a usar o benefício de forma correta e a escolher a opção que melhor se adapta ao seu perfil. Hoje, todos os planos oferecem cobertura praticamente completa de saúde, e as diferenças estão mais relacionadas à rede e serviços adicionais.</p>
+                                
+                                <p class="text-lg leading-relaxed mb-4">Manter seu plano ativo é fundamental: não espere até precisar de um atendimento para se preocupar, pois isso pode gerar a necessidade de cumprir novas carências ou encontrar limitações inesperadas.</p>
                             </div>
 
                             <div class="border-t border-gray-200 pt-6">
                                 <div class="flex items-center justify-between">
                                     <div class="flex items-center space-x-4">
-                                        <span class="text-sm text-gray-500">Publicado em 11 de junho de 2025</span>
+                                        <span class="text-sm text-gray-500">Publicado em 6 de agosto de 2025</span>
                                         <span class="text-sm text-gray-500">•</span>
                                         <span class="text-sm text-gray-500">Por Ródnei Ricardo Faraguti</span>
                                     </div>
@@ -204,41 +216,47 @@
                         <h2 class="text-2xl font-bold text-gray-900 mb-6">CONFIRA TAMBÉM:</h2>
                         
                         <div class="space-y-4">
-                            <article class="bg-white rounded-2xl shadow-lg overflow-hidden">
-                                <div class="flex">
-                                    <div class="w-32 h-24 bg-black flex items-center justify-center flex-shrink-0">
-                                        <span class="text-white text-sm">lorem ipsum</span>
+                            <a href="carencia-o-que-e.html" class="block">
+                                <article class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                                    <div class="flex">
+                                        <div class="w-32 h-24 flex-shrink-0">
+                                            <img src="../images/carencia-o-que.jpg" alt="O que é carência no plano de saúde - Guia completo" class="w-full h-full object-cover">
+                                        </div>
+                                        <div class="p-4 flex-1">
+                                            <h3 class="text-lg font-bold text-gray-900 mb-2">O que é carência no plano de saúde?</h3>
+                                            <p class="text-sm text-gray-600">Entenda como funciona e os prazos</p>
+                                        </div>
                                     </div>
-                                    <div class="p-4 flex-1">
-                                        <h3 class="text-lg font-bold text-gray-900 mb-2">O que é um plano de saúde coparticipativo?</h3>
-                                        <p class="text-sm text-gray-600">lorem ipsum</p>
-                                    </div>
-                                </div>
-                            </article>
+                                </article>
+                            </a>
 
-                            <article class="bg-white rounded-2xl shadow-lg overflow-hidden">
-                                <div class="flex">
-                                    <div class="w-32 h-24 bg-black flex items-center justify-center flex-shrink-0">
-                                        <span class="text-white text-sm">lorem ipsum</span>
+                            <a href="o-que-cobre-plano-saude-v2.html" class="block">
+                                <article class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                                    <div class="flex">
+                                        <div class="w-32 h-24 flex-shrink-0">
+                                            <img src="../images/cobre-saude-direitos.png" alt="O que cobre um plano de saúde - Direitos e coberturas essenciais" class="w-full h-full object-cover">
+                                        </div>
+                                        <div class="p-4 flex-1">
+                                            <h3 class="text-lg font-bold text-gray-900 mb-2">O que cobre um plano de saúde? Guia prático</h3>
+                                            <p class="text-sm text-gray-600">Entenda seus direitos e coberturas</p>
+                                        </div>
                                     </div>
-                                    <div class="p-4 flex-1">
-                                        <h3 class="text-lg font-bold text-gray-900 mb-2">Plano de saúde coparticipativo: quando vale a pena?</h3>
-                                        <p class="text-sm text-gray-600">lorem ipsum</p>
-                                    </div>
-                                </div>
-                            </article>
+                                </article>
+                            </a>
 
-                            <article class="bg-white rounded-2xl shadow-lg overflow-hidden">
-                                <div class="flex">
-                                    <div class="w-32 h-24 bg-black flex items-center justify-center flex-shrink-0">
-                                        <span class="text-white text-sm">lorem ipsum</span>
+                            <a href="qual-plano-saude-mais-barato.html" class="block">
+                                <article class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                                    <div class="flex">
+                                        <div class="w-32 h-24 flex-shrink-0">
+                                            <img src="../images/mais-barato.jpg" alt="Qual o plano de saúde mais barato - Guia completo" class="w-full h-full object-cover">
+                                        </div>
+                                        <div class="p-4 flex-1">
+                                            <h3 class="text-lg font-bold text-gray-900 mb-2">Qual o plano de saúde mais barato?</h3>
+                                            <p class="text-sm text-gray-600">Descubra as melhores opções de custo-benefício</p>
+                                        </div>
                                     </div>
-                                    <div class="p-4 flex-1">
-                                        <h3 class="text-lg font-bold text-gray-900 mb-2">O que cobre um plano de saúde? Guia prático</h3>
-                                        <p class="text-sm text-gray-600">lorem ipsum</p>
-                                    </div>
-                                </div>
-                            </article>
+                                </article>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -249,98 +267,15 @@
                     <div class="bg-white rounded-2xl shadow-lg p-6 mb-8">
                         <h3 class="text-xl font-bold text-gray-900 mb-4">SIMULE SEU PLANO</h3>
                         <p class="text-gray-600 mb-6">Simule e compare as melhores opções sem sair do site</p>
-                        <button class="w-full bg-blue-600 text-white py-3 rounded-2xl font-semibold hover:bg-blue-700 transition-colors">
+                        <a href="../index.html#simulador" class="w-full bg-blue-600 text-white py-3 rounded-2xl font-semibold hover:bg-blue-700 transition-colors block text-center">
                             CLIQUE AQUI
-                        </button>
+                        </a>
                     </div>
 
-                    <!-- Posts Relacionados -->
-                    <div class="bg-white rounded-2xl shadow-lg p-6">
-                        <h3 class="text-xl font-bold text-gray-900 mb-4">lorem ipsum</h3>
-                        
-                        <div class="space-y-4">
-                            <article class="flex space-x-3">
-                                <div class="w-16 h-16 bg-black rounded-lg flex items-center justify-center flex-shrink-0">
-                                    <span class="text-white text-xs">lorem</span>
-                                </div>
-                                <div class="flex-1">
-                                    <h4 class="text-sm font-semibold text-gray-900 mb-1">lorem ipsum</h4>
-                                    <p class="text-xs text-gray-600">lorem ipsum</p>
-                                </div>
-                            </article>
-
-                            <article class="flex space-x-3">
-                                <div class="w-16 h-16 bg-black rounded-lg flex items-center justify-center flex-shrink-0">
-                                    <span class="text-white text-xs">lorem</span>
-                                </div>
-                                <div class="flex-1">
-                                    <h4 class="text-sm font-semibold text-gray-900 mb-1">lorem ipsum</h4>
-                                    <p class="text-xs text-gray-600">lorem ipsum</p>
-                                </div>
-                            </article>
-
-                            <article class="flex space-x-3">
-                                <div class="w-16 h-16 bg-black rounded-lg flex items-center justify-center flex-shrink-0">
-                                    <span class="text-white text-xs">lorem</span>
-                                </div>
-                                <div class="flex-1">
-                                    <h4 class="text-sm font-semibold text-gray-900 mb-1">lorem ipsum</h4>
-                                    <p class="text-xs text-gray-600">lorem ipsum</p>
-                                </div>
-                            </article>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Formulário de Orçamento -->
-        <section class="py-20 bg-gray-50">
-            <div class="container mx-auto px-4">
-                <div class="text-center mb-12">
-                    <h2 class="text-4xl font-bold text-gray-900 mb-4">lorem ipsum</h2>
-                    <p class="text-lg text-gray-600">lorem ipsum dolor sit amet consectetur adipiscing elit</p>
-                </div>
-                
-                <div class="max-w-2xl mx-auto">
-                    <form id="form-orçamento" class="bg-white rounded-2xl p-8 shadow-lg">
-                        <div class="grid md:grid-cols-2 gap-6 mb-6">
-                            <div>
-                                <label for="nome-completo" class="block text-sm font-medium text-gray-700 mb-2">lorem ipsum *</label>
-                                <input type="text" id="nome-completo" name="nome-completo" required class="w-full px-4 py-3 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                            </div>
-                            <div>
-                                <label for="email-orçamento" class="block text-sm font-medium text-gray-700 mb-2">lorem ipsum *</label>
-                                <input type="email" id="email-orçamento" name="email-orçamento" required class="w-full px-4 py-3 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                            </div>
-                            <div>
-                                <label for="telefone-orçamento" class="block text-sm font-medium text-gray-700 mb-2">lorem ipsum *</label>
-                                <input type="tel" id="telefone-orçamento" name="telefone-orçamento" required class="w-full px-4 py-3 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                            </div>
-                            <div>
-                                <label for="modalidade" class="block text-sm font-medium text-gray-700 mb-2">lorem ipsum *</label>
-                                <select id="modalidade" name="modalidade" required class="w-full px-4 py-3 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                                    <option value="">lorem ipsum</option>
-                                    <option value="individual">lorem ipsum</option>
-                                    <option value="familiar">lorem ipsum</option>
-                                    <option value="empresarial">lorem ipsum</option>
-                                    <option value="adesão">lorem ipsum</option>
-                                </select>
-                            </div>
-                        </div>
-                        <button type="submit" class="w-full bg-blue-600 text-white py-4 rounded-2xl font-semibold hover:bg-blue-700 transition-colors flex items-center justify-center space-x-2">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
-                            </svg>
-                            <span>lorem ipsum</span>
-                        </button>
-                    </form>
-                    <div id="orçamento-success" class="hidden mt-4 p-4 bg-green-100 text-green-800 rounded-2xl text-center">
-                        lorem ipsum
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
 
     <!-- Footer -->
@@ -349,10 +284,10 @@
             <div class="grid md:grid-cols-3 gap-8 mb-8">
                 <div>
                     <div class="flex flex-wrap gap-4 mb-4">
-                        <img src="assets/Logo-VaiCo_horizontal_BRANCO_-1.png" alt="VaiCom" class="h-10 w-auto">
+                        <img src="../assets/Logo-VaiCo_horizontal_BRANCO_-1.png" alt="Logo VaiCom Saúde - Corretora de Planos de Saúde" class="h-10 w-auto">
                     </div>
                     <div class="flex items-center space-x-2">
-                        <img src="assets/ans-branca.png" alt="ANS" class="h-8 w-auto">
+                        <img src="../assets/ans-branca.png" alt="Logo ANS - Agência Nacional de Saúde Suplementar" class="h-8 w-auto">
                         <span class="text-sm text-gray-300">Regulamentado pela ANS</span>
                     </div>
                 </div>
@@ -360,10 +295,10 @@
                 <div>
                     <h3 class="text-lg font-semibold mb-4">Links Rápidos</h3>
                     <ul class="space-y-2">
-                        <li><a href="index.html" class="text-gray-300 hover:text-white transition-colors">Início</a></li>
-                        <li><a href="index.html#quem-somos" class="text-gray-300 hover:text-white transition-colors">Quem Somos</a></li>
-                        <li><a href="index.html#planos" class="text-gray-300 hover:text-white transition-colors">Planos</a></li>
-                        <li><a href="blog.html" class="text-gray-300 hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="../index.html" class="text-gray-300 hover:text-white transition-colors">Início</a></li>
+                        <li><a href="../index.html#quem-somos" class="text-gray-300 hover:text-white transition-colors">Quem Somos</a></li>
+                        <li><a href="../index.html#planos" class="text-gray-300 hover:text-white transition-colors">Planos</a></li>
+                        <li><a href="../blog.html" class="text-gray-300 hover:text-white transition-colors">Blog</a></li>
                     </ul>
                 </div>
                 
@@ -405,6 +340,6 @@
         </svg>
     </a>
 
-    <script src="main.js"></script>
+    <script src="../main.js"></script>
 </body>
 </html>
