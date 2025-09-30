@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (formacaoAcademica) {
         formacaoAcademica.addEventListener('change', function() {
-            if (this.value === 'profissional-liberal') {
+            if (this.value === 'bacharelado') {
                 profissaoField.classList.remove('hidden');
             } else {
                 profissaoField.classList.add('hidden');
@@ -147,8 +147,6 @@ document.addEventListener('DOMContentLoaded', function() {
             const profissaoValue = profissao.value;
             const possuiDiploma = document.getElementById('possui-diploma');
             const planoPessoas = document.getElementById('plano-pessoas');
-            const cnpj = document.getElementById('cnpj');
-            const ramoNegocio = document.getElementById('ramo-negocio');
             
             if (possuiCnpjValue) {
                 if (possuiCnpjValue === 'nao') {
@@ -156,7 +154,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         alert('Por favor, selecione sua formação acadêmica.');
                         return;
                     }
-                    if (formacaoAcademicaValue === 'profissional-liberal' && !profissaoValue) {
+                    if (formacaoAcademicaValue === 'bacharelado' && !profissaoValue) {
                         alert('Por favor, selecione sua profissão.');
                         return;
                     }
@@ -167,14 +165,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 } else if (possuiCnpjValue === 'sim') {
                     if (!planoPessoas.value) {
                         alert('Por favor, selecione para quantas pessoas é o plano.');
-                        return;
-                    }
-                    if (!cnpj.value) {
-                        alert('Por favor, informe seu CNPJ.');
-                        return;
-                    }
-                    if (!ramoNegocio.value) {
-                        alert('Por favor, informe o ramo do seu negócio.');
                         return;
                     }
                 }
