@@ -237,10 +237,64 @@ document.addEventListener('DOMContentLoaded', function() {
             const email = document.getElementById('email-final');
             
             if (nome.value && contato.value && email.value) {
-                alert('Tabela gerada com sucesso! Em breve implementaremos a exibição da tabela.');
+                // Coletar todos os dados do simulador
+                const dadosSimulacao = {
+                    nome: nome.value,
+                    telefone: contato.value,
+                    email: email.value,
+                    estado: document.getElementById('estado') ? document.getElementById('estado').value : '',
+                    tipo_plano: document.getElementById('tipo-plano') ? document.getElementById('tipo-plano').value : '',
+                    faixa_etaria: document.getElementById('faixa-etaria') ? document.getElementById('faixa-etaria').value : '',
+                    origem: 'Simulador Simples - Index/Blog'
+                };
+                
+                // Enviar para Formspree
+                enviarParaFormspree(dadosSimulacao);
             } else {
                 alert('Por favor, preencha todos os campos.');
             }
+        });
+    }
+    
+    // Função para enviar dados para Formspree
+    function enviarParaFormspree(dados) {
+        console.log('Enviando dados para Formspree:', dados);
+        
+        const formData = new FormData();
+        formData.append('nome', dados.nome);
+        formData.append('telefone', dados.telefone);
+        formData.append('email', dados.email);
+        formData.append('estado', dados.estado);
+        formData.append('tipo_plano', dados.tipo_plano);
+        formData.append('faixa_etaria', dados.faixa_etaria);
+        formData.append('origem', dados.origem);
+        
+        console.log('FormData criado, enviando para Formspree...');
+        
+        fetch('https://formspree.io/f/myznwqnw', {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => {
+            console.log('Resposta do Formspree:', response);
+            console.log('Status:', response.status);
+            if (response.ok) {
+                alert('Simulação enviada com sucesso! Entraremos em contato em breve.');
+                // Limpar formulário
+                document.getElementById('nome-final').value = '';
+                document.getElementById('contato-final').value = '';
+                document.getElementById('email-final').value = '';
+            } else {
+                console.error('Erro na resposta:', response.status, response.statusText);
+                throw new Error('Erro ao enviar simulação');
+            }
+        })
+        .catch(error => {
+            console.error('Erro completo:', error);
+            alert('Erro ao enviar simulação. Tente novamente ou entre em contato via WhatsApp.');
         });
     }
 

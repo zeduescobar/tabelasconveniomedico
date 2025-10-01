@@ -262,8 +262,74 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         
-        alert('Tabela gerada com sucesso! Em breve implementaremos a exibição da tabela.');
+        // Coletar todos os dados do simulador
+        const dadosSimulacao = {
+            nome: nome,
+            telefone: contato,
+            email: email,
+            modalidade: modalidade,
+            estado: campos.estado.value,
+            tipo_plano: campos.tipoPlano.value,
+            faixa_etaria: campos.faixaEtaria.value,
+            formacao: campos.formacao ? campos.formacao.value : '',
+            cnpj: campos.cnpj ? campos.cnpj.value : '',
+            quantidade_adultos: campos.quantidadeAdultos ? campos.quantidadeAdultos.value : '',
+            quantidade_criancas: campos.quantidadeCriancas ? campos.quantidadeCriancas.value : '',
+            quantidade_idosos: campos.quantidadeIdosos ? campos.quantidadeIdosos.value : ''
+        };
+        
+        // Enviar para Formspree
+        enviarParaFormspree(dadosSimulacao);
     });
+    
+    // Função para enviar dados para Formspree
+    function enviarParaFormspree(dados) {
+        console.log('Enviando dados para Formspree:', dados);
+        
+        const formData = new FormData();
+        formData.append('nome', dados.nome);
+        formData.append('telefone', dados.telefone);
+        formData.append('email', dados.email);
+        formData.append('modalidade', dados.modalidade);
+        formData.append('estado', dados.estado);
+        formData.append('tipo_plano', dados.tipo_plano);
+        formData.append('faixa_etaria', dados.faixa_etaria);
+        formData.append('formacao', dados.formacao);
+        formData.append('cnpj', dados.cnpj);
+        formData.append('quantidade_adultos', dados.quantidade_adultos);
+        formData.append('quantidade_criancas', dados.quantidade_criancas);
+        formData.append('quantidade_idosos', dados.quantidade_idosos);
+        formData.append('origem', 'Simulador de Planos de Saúde');
+        
+        console.log('FormData criado, enviando para Formspree...');
+        
+        fetch('https://formspree.io/f/myznwqnw', {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => {
+            console.log('Resposta do Formspree:', response);
+            console.log('Status:', response.status);
+            if (response.ok) {
+                alert('Simulação enviada com sucesso! Entraremos em contato em breve.');
+                // Limpar formulário
+                document.getElementById('nome-final').value = '';
+                document.getElementById('contato-final').value = '';
+                document.getElementById('email-final').value = '';
+                document.getElementById('modalidade-final').value = '';
+            } else {
+                console.error('Erro na resposta:', response.status, response.statusText);
+                throw new Error('Erro ao enviar simulação');
+            }
+        })
+        .catch(error => {
+            console.error('Erro completo:', error);
+            alert('Erro ao enviar simulação. Tente novamente ou entre em contato via WhatsApp.');
+        });
+    }
     
     console.log('Simulador configurado com sucesso!');
 });
