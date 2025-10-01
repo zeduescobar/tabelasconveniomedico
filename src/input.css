@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles from styles.css */
+.plano-card button {
+    margin-top: auto !important;
+}
+
+/* Filtros de planos e blog */
+.filtro-plano, .filtro-blog {
+    padding: 8px 16px;
+    border-radius: 20px;
+    background-color: #f3f4f6;
+    color: #374151;
+    border: 1px solid #d1d5db;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filtro-plano.active, .filtro-blog.active {
+    background-color: #1d4ed8;
+    color: white;
+    border: 1px solid #1e40af;
+}
+
+.filtro-plano:hover, .filtro-blog:hover {
+    background-color: #e5e7eb;
+    color: #1f2937;
+    border-color: #9ca3af;
+}
+
+.filtro-plano.active:hover, .filtro-blog.active:hover {
+    background-color: #1e40af;
+    border-color: #1e3a8a;
+}
+
+/* Animações */
+.animate-fade-in {
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hover effects para cards */
+.blog-card:hover .blog-card-image {
+    transform: scale(1.05);
+}
+
+.blog-card-image {
+    transition: transform 0.3s ease;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
