@@ -50,8 +50,9 @@ img[src*="coparticip.jpg"] {
 }
 
 .filtro-plano.active, .filtro-blog.active {
-    background-color: #3b82f6;
+    background-color: #1d4ed8;
     color: white;
+    border: 1px solid #1e40af;
 }
 
 .filtro-plano:hover, .filtro-blog:hover {
@@ -61,7 +62,8 @@ img[src*="coparticip.jpg"] {
 }
 
 .filtro-plano.active:hover, .filtro-blog.active:hover {
-    background-color: #2563eb;
+    background-color: #1e40af;
+    border-color: #1e3a8a;
 }
 
 /* Animações */
