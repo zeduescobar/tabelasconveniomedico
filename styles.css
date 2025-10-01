@@ -21,21 +21,35 @@ img[src*="coparticip.jpg"] {
 .plano-card {
     display: flex !important;
     flex-direction: column !important;
-    height: 100% !important;
+    height: 500px !important; /* Altura fixa para todos os cards */
+    position: relative !important; /* Para posicionamento absoluto do botão */
 }
 
 .plano-card .p-6 {
     display: flex !important;
     flex-direction: column !important;
     flex-grow: 1 !important;
+    height: 100% !important;
+    padding-bottom: 0 !important; /* Remove padding para o botão absoluto */
+}
+
+.plano-card h3 {
+    padding: 0 24px !important; /* Padding lateral para o título */
+    margin-bottom: 12px !important;
 }
 
 .plano-card p {
     flex-grow: 1 !important;
+    margin-bottom: 0 !important;
+    padding: 0 24px !important; /* Padding lateral para o texto */
 }
 
 .plano-card button {
-    margin-top: auto !important;
+    position: absolute !important;
+    bottom: 24px !important; /* Posição fixa do botão */
+    left: 24px !important;
+    right: 24px !important;
+    width: calc(100% - 48px) !important; /* Largura total menos padding */
 }
 
 /* Filtros de planos e blog */
