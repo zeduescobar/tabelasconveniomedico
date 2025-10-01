@@ -28,14 +28,17 @@ img[src*="coparticip.jpg"] {
     display: flex !important;
     flex-direction: column !important;
     flex-grow: 1 !important;
+    justify-content: space-between !important;
 }
 
 .plano-card p {
     flex-grow: 1 !important;
+    margin-bottom: 1.5rem !important;
 }
 
 .plano-card button {
     margin-top: auto !important;
+    align-self: stretch !important;
 }
 
 /* Filtros de planos e blog */
