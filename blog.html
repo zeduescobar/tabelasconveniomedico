@@ -33,34 +33,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        // Suppress Tailwind production warning
-        window.tailwind = window.tailwind || {};
-        window.tailwind.config = window.tailwind.config || {};
-        window.tailwind.config.silent = true;
-        
-        // Override console.warn to suppress Tailwind warning
-        const originalWarn = console.warn;
-        console.warn = function(...args) {
-            if (args[0] && args[0].includes('cdn.tailwindcss.com should not be used in production')) {
-                return;
-            }
-            originalWarn.apply(console, args);
-        };
-    </script>
+    <link rel="stylesheet" href="dist/output.css">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        'sans': ['Inter', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
     <style>
         html { scroll-behavior: smooth; }
         .font-inter { font-family: 'Inter', sans-serif; }

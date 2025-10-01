@@ -627,24 +627,26 @@ document.addEventListener('DOMContentLoaded', function() {
     lazyLoadImages();
     
     const preloadCriticalResources = () => {
-        // Only preload on main pages, not on posts
-        if (window.location.pathname.includes('/posts/')) {
-            return;
+        // Only preload images that are actually used on the current page
+        const currentPage = window.location.pathname;
+        
+        // Check if image is actually used on the page
+        const isImageUsed = (src) => {
+            const imgElements = document.querySelectorAll('img');
+            return Array.from(imgElements).some(img => img.src.includes(src) || img.getAttribute('src')?.includes(src));
+        };
+        
+        // Only preload hero image on index page
+        if (currentPage === '/' || currentPage === '/index.html') {
+            const heroImage = 'assets/image-hero.webp';
+            if (isImageUsed(heroImage)) {
+                const link = document.createElement('link');
+                link.rel = 'preload';
+                link.as = 'image';
+                link.href = heroImage;
+                document.head.appendChild(link);
+            }
         }
-        
-        const criticalImages = [
-            'assets/image-quem-somos.webp',
-            'assets/image-hero.webp',
-            'assets/image-individual.webp'
-        ];
-        
-        criticalImages.forEach(src => {
-            const link = document.createElement('link');
-            link.rel = 'preload';
-            link.as = 'image';
-            link.href = src;
-            document.head.appendChild(link);
-        });
     };
     
     preloadCriticalResources();
