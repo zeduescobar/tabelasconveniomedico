@@ -187,27 +187,25 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (btnAvancar4) {
         btnAvancar4.addEventListener('click', function() {
-            const idadesAdultos = ['idade-19-23', 'idade-24-28', 'idade-29-33', 'idade-34-38', 'idade-39-43', 'idade-44-48', 'idade-49-53', 'idade-54-58', 'idade-59-plus'];
-            let totalAdultos = 0;
+            // Nova validação: impedir avanço se nenhuma quantidade foi selecionada
+            const todasAsIdades = ['idade-00-18','idade-19-23','idade-24-28','idade-29-33','idade-34-38','idade-39-43','idade-44-48','idade-49-53','idade-54-58','idade-59-plus'];
+            let totalPessoas = 0;
+            let algumaSelecionada = false;
             
-            idadesAdultos.forEach(id => {
-                const selectElement = document.getElementById(id);
-                if (selectElement) {
-                    const valor = selectElement.value;
-                    if (valor && valor !== '') {
-                        const num = parseInt(valor);
-                        totalAdultos += (num === 999) ? 10 : num;
-                    }
+            todasAsIdades.forEach(id => {
+                const el = document.getElementById(id);
+                if (!el) return;
+                const valor = el.value;
+                if (valor !== '' && valor != null) {
+                    algumaSelecionada = true;
+                    const num = parseInt(valor);
+                    totalPessoas += (num === 999) ? 10 : num;
                 }
             });
             
-            if (totalAdultos < 1) {
-                const alertaAdulto = document.getElementById('alerta-adulto');
-                if (alertaAdulto) alertaAdulto.classList.remove('hidden');
+            if (!algumaSelecionada || totalPessoas === 0) {
+                alert('Selecione pelo menos 1 pessoa em qualquer faixa etária.');
                 return;
-            } else {
-                const alertaAdulto = document.getElementById('alerta-adulto');
-                if (alertaAdulto) alertaAdulto.classList.add('hidden');
             }
             
             mostrarPasso(5);
@@ -237,63 +235,81 @@ document.addEventListener('DOMContentLoaded', function() {
             const email = document.getElementById('email-final');
             
             if (nome.value && contato.value && email.value) {
+                // Coletar dados das idades
+                const todasAsIdades = ['idade-00-18','idade-19-23','idade-24-28','idade-29-33','idade-34-38','idade-39-43','idade-44-48','idade-49-53','idade-54-58','idade-59-plus'];
+                let faixaEtariaDetalhada = '';
+                let totalPessoas = 0;
+                
+                todasAsIdades.forEach(id => {
+                    const el = document.getElementById(id);
+                    if (el && el.value && el.value !== '') {
+                        const valor = parseInt(el.value);
+                        const quantidade = (valor === 999) ? 10 : valor;
+                        if (quantidade > 0) {
+                            const faixa = id.replace('idade-', '').replace('-', '-').replace('plus', '+');
+                            faixaEtariaDetalhada += `${faixa}: ${quantidade} pessoa(s); `;
+                            totalPessoas += quantidade;
+                        }
+                    }
+                });
+                
                 // Coletar todos os dados do simulador
                 const dadosSimulacao = {
                     nome: nome.value,
                     telefone: contato.value,
                     email: email.value,
                     estado: document.getElementById('estado') ? document.getElementById('estado').value : '',
+                    cidade: document.getElementById('cidade') ? document.getElementById('cidade').value : '',
                     tipo_plano: document.getElementById('tipo-plano') ? document.getElementById('tipo-plano').value : '',
-                    faixa_etaria: document.getElementById('faixa-etaria') ? document.getElementById('faixa-etaria').value : '',
+                    faixa_etaria: faixaEtariaDetalhada || 'Não informado',
+                    total_pessoas: totalPessoas,
                     origem: 'Simulador Simples - Index/Blog'
                 };
                 
-                // Enviar para Formspree
-                enviarParaFormspree(dadosSimulacao);
+                // Enviar via EmailJS
+                enviarViaEmailJS(dadosSimulacao);
             } else {
                 alert('Por favor, preencha todos os campos.');
             }
         });
     }
     
-    // Função para enviar dados para Formspree
-    function enviarParaFormspree(dados) {
-        console.log('Enviando dados para Formspree:', dados);
+    // Função para enviar dados via EmailJS
+    function enviarViaEmailJS(dados) {
+        console.log('Enviando dados via EmailJS:', dados);
         
-        const formData = new FormData();
-        formData.append('nome', dados.nome);
-        formData.append('telefone', dados.telefone);
-        formData.append('email', dados.email);
-        formData.append('estado', dados.estado);
-        formData.append('tipo_plano', dados.tipo_plano);
-        formData.append('faixa_etaria', dados.faixa_etaria);
-        formData.append('origem', dados.origem);
+        // Inicializar EmailJS
+        emailjs.init('DYP-ZCfj9GmFyfXd0');
         
-        console.log('FormData criado, enviando para Formspree...');
+        // Preparar dados para o template
+        const templateParams = {
+            nome: dados.nome,
+            telefone: dados.telefone,
+            email: dados.email,
+            estado: dados.estado,
+            cidade: dados.cidade,
+            tipo_plano: dados.tipo_plano,
+            faixa_etaria: dados.faixa_etaria,
+            total_pessoas: dados.total_pessoas,
+            origem: dados.origem,
+            data_atual: new Date().toLocaleDateString('pt-BR'),
+            hora_atual: new Date().toLocaleTimeString('pt-BR')
+        };
         
-        fetch('https://formspree.io/f/myznwqnw', {
-            method: 'POST',
-            body: formData,
-            headers: {
-                'Accept': 'application/json'
-            }
+        console.log('Parâmetros do template:', templateParams);
+        
+        // Enviar email
+        emailjs.send('service_7lksfa7', 'template_h2gdu6o', templateParams)
+        .then(function(response) {
+            console.log('Email enviado com sucesso!', response.status, response.text);
+            alert('Simulação enviada com sucesso! Entraremos em contato em breve.');
+            // Limpar formulário
+            document.getElementById('nome-final').value = '';
+            document.getElementById('contato-final').value = '';
+            document.getElementById('email-final').value = '';
         })
-        .then(response => {
-            console.log('Resposta do Formspree:', response);
-            console.log('Status:', response.status);
-            if (response.ok) {
-                alert('Simulação enviada com sucesso! Entraremos em contato em breve.');
-                // Limpar formulário
-                document.getElementById('nome-final').value = '';
-                document.getElementById('contato-final').value = '';
-                document.getElementById('email-final').value = '';
-            } else {
-                console.error('Erro na resposta:', response.status, response.statusText);
-                throw new Error('Erro ao enviar simulação');
-            }
-        })
-        .catch(error => {
-            console.error('Erro completo:', error);
+        .catch(function(error) {
+            console.error('Erro ao enviar email:', error);
             alert('Erro ao enviar simulação. Tente novamente ou entre em contato via WhatsApp.');
         });
     }

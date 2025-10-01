@@ -198,31 +198,29 @@ document.addEventListener('DOMContentLoaded', function() {
     botoes.avancar4.addEventListener('click', function() {
         console.log('Botão avançar 4 clicado');
         
-        // Calcular total de adultos (19+ anos)
-        const idadesAdultos = [
-            'idade-19-23', 'idade-24-28', 'idade-29-33', 'idade-34-38',
+        // Nova validação: bloquear avanço se nenhuma quantidade foi selecionada
+        const todasAsIdades = [
+            'idade-00-18', 'idade-19-23', 'idade-24-28', 'idade-29-33', 'idade-34-38',
             'idade-39-43', 'idade-44-48', 'idade-49-53', 'idade-54-58', 'idade-59-plus'
         ];
         
-        let totalAdultos = 0;
+        let totalPessoas = 0;
+        let algumaSelecionada = false;
         
-        idadesAdultos.forEach(id => {
-            const elemento = document.getElementById(id);
-            if (elemento && elemento.value) {
-                const valor = parseInt(elemento.value);
-                totalAdultos += (valor === 999) ? 10 : valor;
+        todasAsIdades.forEach(id => {
+            const el = document.getElementById(id);
+            if (!el) return;
+            const valor = el.value;
+            if (valor !== '' && valor != null) {
+                algumaSelecionada = true;
+                const num = parseInt(valor);
+                totalPessoas += (num === 999) ? 10 : num;
             }
         });
         
-        console.log('Total de adultos:', totalAdultos);
-        
-        if (totalAdultos < 1) {
-            const alerta = document.getElementById('alerta-adulto');
-            if (alerta) alerta.classList.add('visivel');
+        if (!algumaSelecionada || totalPessoas === 0) {
+            alert('Selecione pelo menos 1 pessoa em qualquer faixa etária.');
             return;
-        } else {
-            const alerta = document.getElementById('alerta-adulto');
-            if (alerta) alerta.classList.remove('visivel');
         }
         
         navegarPasso(4, 5);
@@ -269,6 +267,7 @@ document.addEventListener('DOMContentLoaded', function() {
             email: email,
             modalidade: modalidade,
             estado: campos.estado.value,
+            cidade: campos.cidade ? campos.cidade.value : '',
             tipo_plano: campos.tipoPlano.value,
             faixa_etaria: campos.faixaEtaria.value,
             formacao: campos.formacao ? campos.formacao.value : '',
@@ -278,55 +277,51 @@ document.addEventListener('DOMContentLoaded', function() {
             quantidade_idosos: campos.quantidadeIdosos ? campos.quantidadeIdosos.value : ''
         };
         
-        // Enviar para Formspree
-        enviarParaFormspree(dadosSimulacao);
+        // Enviar via EmailJS
+        enviarViaEmailJS(dadosSimulacao);
     });
     
-    // Função para enviar dados para Formspree
-    function enviarParaFormspree(dados) {
-        console.log('Enviando dados para Formspree:', dados);
+    // Função para enviar dados via EmailJS
+    function enviarViaEmailJS(dados) {
+        console.log('Enviando dados via EmailJS:', dados);
         
-        const formData = new FormData();
-        formData.append('nome', dados.nome);
-        formData.append('telefone', dados.telefone);
-        formData.append('email', dados.email);
-        formData.append('modalidade', dados.modalidade);
-        formData.append('estado', dados.estado);
-        formData.append('tipo_plano', dados.tipo_plano);
-        formData.append('faixa_etaria', dados.faixa_etaria);
-        formData.append('formacao', dados.formacao);
-        formData.append('cnpj', dados.cnpj);
-        formData.append('quantidade_adultos', dados.quantidade_adultos);
-        formData.append('quantidade_criancas', dados.quantidade_criancas);
-        formData.append('quantidade_idosos', dados.quantidade_idosos);
-        formData.append('origem', 'Simulador de Planos de Saúde');
+        // Inicializar EmailJS
+        emailjs.init('DYP-ZCfj9GmFyfXd0');
         
-        console.log('FormData criado, enviando para Formspree...');
+        // Preparar dados para o template
+        const templateParams = {
+            nome: dados.nome,
+            telefone: dados.telefone,
+            email: dados.email,
+            estado: dados.estado,
+            cidade: dados.cidade || '',
+            tipo_plano: dados.tipo_plano,
+            faixa_etaria: dados.faixa_etaria,
+            formacao: dados.formacao || '',
+            cnpj: dados.cnpj || '',
+            quantidade_adultos: dados.quantidade_adultos || '',
+            quantidade_criancas: dados.quantidade_criancas || '',
+            quantidade_idosos: dados.quantidade_idosos || '',
+            origem: dados.origem,
+            data_atual: new Date().toLocaleDateString('pt-BR'),
+            hora_atual: new Date().toLocaleTimeString('pt-BR')
+        };
         
-        fetch('https://formspree.io/f/myznwqnw', {
-            method: 'POST',
-            body: formData,
-            headers: {
-                'Accept': 'application/json'
-            }
+        console.log('Parâmetros do template:', templateParams);
+        
+        // Enviar email
+        emailjs.send('service_7lksfa7', 'template_h2gdu6o', templateParams)
+        .then(function(response) {
+            console.log('Email enviado com sucesso!', response.status, response.text);
+            alert('Simulação enviada com sucesso! Entraremos em contato em breve.');
+            // Limpar formulário
+            document.getElementById('nome-final').value = '';
+            document.getElementById('contato-final').value = '';
+            document.getElementById('email-final').value = '';
+            document.getElementById('modalidade-final').value = '';
         })
-        .then(response => {
-            console.log('Resposta do Formspree:', response);
-            console.log('Status:', response.status);
-            if (response.ok) {
-                alert('Simulação enviada com sucesso! Entraremos em contato em breve.');
-                // Limpar formulário
-                document.getElementById('nome-final').value = '';
-                document.getElementById('contato-final').value = '';
-                document.getElementById('email-final').value = '';
-                document.getElementById('modalidade-final').value = '';
-            } else {
-                console.error('Erro na resposta:', response.status, response.statusText);
-                throw new Error('Erro ao enviar simulação');
-            }
-        })
-        .catch(error => {
-            console.error('Erro completo:', error);
+        .catch(function(error) {
+            console.error('Erro ao enviar email:', error);
             alert('Erro ao enviar simulação. Tente novamente ou entre em contato via WhatsApp.');
         });
     }
