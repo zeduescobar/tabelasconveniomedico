@@ -901,7 +901,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (window.innerWidth < 768) {
                 const viewport = document.querySelector('meta[name="viewport"]');
                 if (viewport) {
-                    viewport.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no';
+                    viewport.content = 'width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes';
                 }
             }
         }
